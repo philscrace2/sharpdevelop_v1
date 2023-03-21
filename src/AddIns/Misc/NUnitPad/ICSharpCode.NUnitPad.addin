@@ -1,0 +1,51 @@
+<AddIn
+	name        = "NUnit-Addin"
+	author      = "Mike Krueger"
+	copyright   = "GPL"
+	url         = "http://www.icsharpcode.net"
+	description = "Integrated NUnit test runner for #Develop"
+	version     = "1.0.0"
+>
+	<Runtime>
+		<Import assembly="ICSharpCode.NUnitPad.dll"/>
+	</Runtime>
+	
+	<Extension path = "/SharpDevelop/Workbench/Views">
+		<Pad id       = "NUnitPad"
+		     shortcut = "Control|Alt|N"
+		     class    = "ICSharpCode.NUnitPad.NUnitPadContent"/>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Views/ProjectBrowser/ContextMenu/ProjectBrowserNode">
+		<MenuItem id = "RunTests"
+		          insertafter ="RemoveRenameSeparator"
+		          insertbefore ="Deploy"
+		          label = "${res:ProjectComponent.ContextMenu.RunTests}"
+		          class = "ICSharpCode.NUnitPad.RunTestsInProject"/>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Workbench/MainMenu/Project">
+		<Conditional activeproject="*" action="Disable">
+			<MenuItem id = "RunTests"
+			          insertbefore ="Deploy"
+			          label = "${res:XML.MainMenu.ProjectMenu.RunTests}" 
+			          description = "${res:XML.MainMenu.ProjectMenu.RunTests.Description}"
+			          class = "ICSharpCode.NUnitPad.RunTestsInProject"/>
+		</Conditional>
+	</Extension>
+	
+	
+	<Extension path = "/NUnitPad/TestTreeView/ContextMenu">
+		<Conditional ownerstate="TestItemSelected">
+			<MenuItem id = "Run"
+			          label = "${res:NUnitPad.NUnitPadContent.RunTestsContextMenuLabel}"
+			          class = "ICSharpCode.NUnitPad.RunTestsCommand"/>
+		</Conditional>
+		<Conditional ownerstate="SourceCodeItemSelected">
+			<MenuItem id = "GotoDefinition"
+			          label = "${res:NUnitPad.NUnitPadContent.GotoDefinitionContextMenuLabel}"
+			          class = "ICSharpCode.NUnitPad.GotoDefinitionCommand"/>
+		</Conditional>
+	</Extension>
+	
+</AddIn>

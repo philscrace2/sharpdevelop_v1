@@ -1,0 +1,41 @@
+<Project name="ResourceAssembler" standardNamespace="NewProject" description="erzeugt ein C# Konsolenprojekt" newfilesearch="OnLoad" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResAsm.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\.svn\prop-base\AssemblyInfo.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\ResAsm.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\ResourceAssembler.cmbx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\ResourceAssembler.prjx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\AssemblyInfo.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\ResAsm.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\ResourceAssembler.cmbx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\ResourceAssembler.prjx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\AssemblyInfo.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\ResAsm.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\ResourceAssembler.cmbx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\ResourceAssembler.prjx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\AssemblyInfo.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\ResAsm.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\ResourceAssembler.cmbx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\ResourceAssembler.prjx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+  </Contents>
+  <References />
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon=".\" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory=".\" assembly="ResourceAssembler" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon=".\" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\" assembly="ResourceAssembler" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon=".\" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\" assembly="ResourceAssembler" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>

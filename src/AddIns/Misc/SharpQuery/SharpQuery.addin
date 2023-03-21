@@ -1,0 +1,181 @@
+<AddIn name        = "SharpQuery"
+       author      = "Denis ERCHOFF"
+       copyright   = "GPL"
+       url         = "http://www.icsharpcode.net"
+       description = "SharpQuery"
+       version     = "0.0.1">
+    
+    <Runtime>
+        <Import assembly="SharpQuery.dll"/>
+    </Runtime>
+    
+
+    <Extension path = "/SharpQuery/Connection">
+     <Class id = "ConnectionWrapper" 
+	    	class = "SharpQuery.Connection.OLEDBConnectionWrapper"/>
+	 <SharpQueryConnection id ="Column"
+	 		schema="SharpQuery.SchemaClass.SharpQueryColumn"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeColumn"/>	 		
+	 <SharpQueryConnection id ="Parameter"
+	 		schema="SharpQuery.SchemaClass.SharpQueryParameter"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeParameter"/>
+	 <SharpQueryConnection id ="Procedure"
+	 		schema="SharpQuery.SchemaClass.SharpQueryProcedure"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeProcedure"/>
+	 <SharpQueryConnection id ="Table"
+	 		schema="SharpQuery.SchemaClass.SharpQueryTable"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeTable"/>
+	 <SharpQueryConnection id ="View"
+	 		schema="SharpQuery.SchemaClass.SharpQueryView"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeView"/>
+	 <SharpQueryConnection id ="NotSupported"
+	 		schema="SharpQuery.SchemaClass.SharpQueryNotSupported"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeNotSupported"/>
+	 <SharpQueryConnection id ="Tables"
+	 		schema="SharpQuery.SchemaClass.SharpQueryTables"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeTableRoot"/>
+	 <SharpQueryConnection id ="Views"
+	 		schema="SharpQuery.SchemaClass.SharpQueryViews"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeViewRoot"/>
+	 <SharpQueryConnection id ="Procedures"
+	 		schema="SharpQuery.SchemaClass.SharpQueryProcedures"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeProcedureRoot"/>
+	 <SharpQueryConnection id ="Schema"
+	 		schema="SharpQuery.SchemaClass.SharpQuerySchema"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeSchema"/>
+	 <SharpQueryConnection id ="Catalog"
+	 		schema="SharpQuery.SchemaClass.SharpQueryCatalog"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeCatalog"/>
+	 <SharpQueryConnection id ="OLEDB"
+	 		schema="SharpQuery.Connection.OLEDBConnectionWrapper"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeConnection"/>	 		
+	 <SharpQueryConnection id ="ADO"
+	 		schema="SharpQuery.Connection.ADOConnectionWrapper"
+	 		node ="SharpQuery.Gui.TreeView.SharpQueryNodeConnection"/>	 			    	
+    </Extension>
+
+
+    <Extension path = "/SharpDevelop/Workbench/Views">
+     <Class id    = "SharpQuery" 
+	        insertafter = "HelpBrowser"
+	    	class = "SharpQuery.Pads.SharpQueryView"/>
+    </Extension>
+
+
+	<Extension path = "/SharpQuery/ContextMenu/DatabaseRoot">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+		<MenuItem id = "Separator1" 
+			  label = "-" />
+		<MenuItem id = "AddConnection"
+		          label = "${res:SharpQuery.Label.AddConnection}"
+		          icon = "Icons.16x16.SharpQuery.AddConnection"
+		          class = "SharpQuery.Commands.SharpQueryAddconnectionCommand"/>		
+
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/DatabaseConnection">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+		<MenuItem id = "Separator1" 
+			  label = "-" />	
+		<MenuItem id = "Supprimer"
+		          label = "${res:SharpQuery.Label.Remove}"
+			  icon="Icons.16x16.SharpQuery.Remove"
+		          class = "SharpQuery.Commands.SharpQueryRemoveConnectionCommand"/>	
+		<MenuItem id = "Separator2" 
+			  label = "-" />
+		<MenuItem id = "ModifyConnection"
+		          label = "${res:SharpQuery.Label.ModifyConnection}"
+		          class = "SharpQuery.Commands.SharpQueryModifyConnectionCommand"/>
+		<MenuItem id = "Disconnect"
+		          label = "${res:SharpQuery.Label.Disconnect}"
+		          class = "SharpQuery.Commands.SharpQueryDisconnectCommand"/>
+		<MenuItem id = "Connect"
+		          label = "${res:SharpQuery.Label.Connect}"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/TablesRoot">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/ViewsRoot">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/ProceduresRoot">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+
+
+	<Extension path = "/SharpQuery/ContextMenu/Table">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+		<MenuItem id = "ExtractData"
+		          label = "${res:SharpQuery.Label.ExtractData}"
+		          class = "SharpQuery.Commands.SharpQueryExecuteCommand"/>		          
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/View">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+		<MenuItem id = "ExtractData"
+		          label = "${res:SharpQuery.Label.ExtractData}"
+		          class = "SharpQuery.Commands.SharpQueryExecuteCommand"/>		          
+	</Extension>
+
+
+	<Extension path = "/SharpQuery/ContextMenu/Procedure">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+
+
+	<Extension path = "/SharpQuery/ContextMenu/Coulmn">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/Parameter">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+
+	<Extension path = "/SharpQuery/ContextMenu/Catalog">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+	
+	<Extension path = "/SharpQuery/ContextMenu/Schema">
+		<MenuItem id = "Refresh"
+		          label = "${res:SharpQuery.Label.Refresh}"
+		          icon = "Icons.16x16.SharpQuery.Refresh"
+		          class = "SharpQuery.Commands.SharpQueryRefreshCommand"/>		
+	</Extension>
+</AddIn>

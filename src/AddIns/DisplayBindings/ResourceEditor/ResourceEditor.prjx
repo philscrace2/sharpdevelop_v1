@@ -1,0 +1,53 @@
+<Project name="ResourceEditor" standardNamespace="NewProject" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\build.bat" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Icons.16x16.ResourceFileIcon.png" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\ModuleDefinition.xml" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\DisplayDefinition.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\BitmapView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\ResourceClipboardHandler.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\BinaryView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\ResourceList.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\ResourceEditor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\TextView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\IResourceView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\ResourceItem.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\IconView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\AbstractImageView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\CursorView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\BooleanView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\ResourceEdit\ResourceItemHashtable.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\AddStringEntryCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\AddNewFileCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\SaveEntryAsCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\RenameEntryCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\CopyResourceNameCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\DeleteEntryCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\ClipboardCommands.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Assembly" refto="..\..\..\..\bin\SharpDevelop.Base.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.Core.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.XmlForms.dll" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="False" />
+    <Output directory="..\..\..\..\AddIns\AddIns\DisplayBindings" assembly="ResourceEditor" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory="..\..\..\..\AddIns\AddIns\DisplayBindings" assembly="ResourceEditor" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory="..\..\..\..\AddIns\AddIns\DisplayBindings" assembly="ResourceEditor" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>

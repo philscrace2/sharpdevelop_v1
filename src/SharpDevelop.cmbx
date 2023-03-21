@@ -1,0 +1,28 @@
+<Combine fileversion="1.0" name="SharpDevelop" description="">
+  <StartMode startupentry="" single="True">
+    <Execute entry="AddIns" type="None" />
+    <Execute entry="Libraries" type="None" />
+    <Execute entry="SharpDevelop - Main" type="None" />
+    <Execute entry="Tools" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\AddIns\AddIns.cmbx" />
+    <Entry filename=".\Libraries\Libraries.cmbx" />
+    <Entry filename=".\Main\Main.cmbx" />
+    <Entry filename=".\Tools\Tools.cmbx" />
+  </Entries>
+  <Configurations active="Release">
+    <Configuration name="Release">
+      <Entry name="AddIns" configurationname="Release" build="False" />
+      <Entry name="Libraries" configurationname="Debug" build="False" />
+      <Entry name="SharpDevelop - Main" configurationname="Debug" build="False" />
+      <Entry name="Tools" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="AddIns" configurationname="Release" build="False" />
+      <Entry name="Libraries" configurationname="Debug" build="False" />
+      <Entry name="SharpDevelop - Main" configurationname="Debug" build="False" />
+      <Entry name="Tools" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

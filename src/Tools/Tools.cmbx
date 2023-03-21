@@ -1,0 +1,40 @@
+<Combine fileversion="1.0" name="Tools" description="">
+  <StartMode startupentry="" single="True">
+    <Execute entry="HelpBrowserApp" type="None" />
+    <Execute entry="LocalizationDbToResFile" type="None" />
+    <Execute entry="BuildHelpIndex" type="None" />
+    <Execute entry="LocalizationXmlToResFile" type="None" />
+    <Execute entry="ResourceAssembler" type="None" />
+    <Execute entry="SharpCoco" type="None" />
+    <Execute entry="SVNChangelogToXml" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\HelpConverter\HelpConverter.prjx" />
+    <Entry filename=".\LocalizationDbToResFile\LocalizationDbToResFile.prjx" />
+    <Entry filename=".\BuildHelpIndex\BuildHelpIndex.prjx" />
+    <Entry filename=".\LocalizationXmlToResFile\LocalizationXmlToResFile.prjx" />
+    <Entry filename=".\ResourceAssembler\ResourceAssembler.prjx" />
+    <Entry filename=".\SharpCoco\src\SharpCoco.prjx" />
+    <Entry filename=".\SVNChangeLogToXml\SVNChangelogToXml.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="HelpBrowserApp" configurationname="Debug" build="False" />
+      <Entry name="LocalizationDbToResFile" configurationname="Debug" build="False" />
+      <Entry name="BuildHelpIndex" configurationname="Debug" build="False" />
+      <Entry name="LocalizationXmlToResFile" configurationname="Debug" build="False" />
+      <Entry name="ResourceAssembler" configurationname="Debug" build="False" />
+      <Entry name="SharpCoco" configurationname="Debug" build="False" />
+      <Entry name="SVNChangelogToXml" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="HelpBrowserApp" configurationname="Debug" build="False" />
+      <Entry name="LocalizationDbToResFile" configurationname="Debug" build="False" />
+      <Entry name="BuildHelpIndex" configurationname="Debug" build="False" />
+      <Entry name="LocalizationXmlToResFile" configurationname="Debug" build="False" />
+      <Entry name="ResourceAssembler" configurationname="Debug" build="False" />
+      <Entry name="SharpCoco" configurationname="Debug" build="False" />
+      <Entry name="SVNChangelogToXml" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

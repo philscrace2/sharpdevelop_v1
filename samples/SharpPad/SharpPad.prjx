@@ -1,0 +1,57 @@
+<Project name="SharpPad" standardNamespace="NewProject" description="erzeugt eine leere C# Windowsanwendung" newfilesearch="OnLoad" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\SharpPad.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SharpPad.ico" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\SharpPad.resources" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\ICSharpCode.TextEditor.dll.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\SharpPad.cmbx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\SharpPad.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\SharpPad.exe.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\SharpPad.ico.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\SharpPad.prjx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\SharpPad.resources.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\ICSharpCode.TextEditor.dll.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\SharpPad.cmbx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\SharpPad.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\SharpPad.exe.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\SharpPad.ico.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\SharpPad.prjx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\SharpPad.resources.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\ICSharpCode.TextEditor.dll.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\SharpPad.cmbx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\SharpPad.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\SharpPad.exe.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\SharpPad.ico.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\SharpPad.prjx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\SharpPad.resources.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\ICSharpCode.TextEditor.dll.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\SharpPad.cmbx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\SharpPad.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\SharpPad.exe.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\SharpPad.ico.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\SharpPad.prjx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\SharpPad.resources.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\SharpPad.exe.manifest" subtype="Code" buildaction="Exclude" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Assembly" refto="..\..\bin\ICSharpCode.TextEditor.dll" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory=".\" assembly="SharpPad" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\" assembly="SharpPad" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory=".\" assembly="SharpPad" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+  </Configurations>
+</Project>

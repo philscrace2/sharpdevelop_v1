@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+<project name="SharpDevelop - AddIns" default="build" basedir=".">
+	<property name = "miscaddindir" value="${addindir}/AddIns/Misc"/>
+	<property name = "assemblyanalyserdir" value="${miscaddindir}/AssemblyAnalyser"/>
+	<property name = "nunitpaddir" value="${miscaddindir}/NUnitPad"/>
+
+	<target name="build">
+		<!-- compile RegExToolkit -->
+		<echo message = "Building RegExTk"/>
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/RegExpTk/RegExpTk.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir="RegExpTk">
+				<includes name="**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="CSharpParser.dll"/>
+				<includes name="CommandBar.dll"/>
+			</references>
+		</csc>
+		
+		<!-- compile StartPage AddIn -->
+		<echo message = "Building StartPage AddIn"/>
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/StartPage/ICSharpCode.StartPage.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "StartPage">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<resources basedir = "StartPage">
+				<includes name = "gradient.png"/>
+				<includes name = "start.png"/>
+				<includes name = "top.png"/>
+			</resources>
+			
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+
+		<!-- compile FiletypeRegisterer AddIn -->
+		<echo message = "Building FiletypeRegisterer AddIn"/>
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/FiletypeRegisterer/ICSharpCode.FiletypeRegisterer.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "FiletypeRegisterer">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "ICSharpCode.XmlForms.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+
+		<!-- compile HighlightingEditor AddIn -->
+		
+		<echo message = "Building Highlighting Editor AddIn"/>
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/HighlightingEditor/SharpDevelop.HighlightingEditor.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "HighlightingEditor">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "ICSharpCode.XmlForms.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name = "ICSharpCode.TextEditor.dll"/>
+			</references>
+		</csc>
+		
+		<!-- compile Project importer/exporter AddIn -->
+		<echo message = "Building Project importer/exporter AddIn"/>
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/ProjectImporterExporter/ICSharpCode.ProjectImporterExporter.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "ProjectImporterExporter/src">
+				<includes name = "**/*.cs"/>
+			</sources>
+			<resources basedir = "ProjectImporterExporter/data">
+				<includes name = "ImportProjectDialog.xfrm"/>
+				<includes name = "ExportProjectDialog.xfrm"/>
+				<includes name = "ChooseProjectLocationDialog.xfrm"/>
+				<includes name = "*.xsl"/>
+			</resources>
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.XmlForms.dll"/>
+			</references>
+		</csc>
+
+		<echo message = "Building sharp query"/>
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/SharpQuery/SharpQuery.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "SharpQuery">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="${miscaddindir}/SharpQuery/Interop.msado15.dll"/>
+				<includes name="${miscaddindir}/SharpQuery/Interop.oledb32.dll"/>
+				<includes name="ICSharpCode.SharpAssembly.dll"/>    
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+		
+		<echo message = "Building AddinScout" />
+		<csc 
+			target = "library" 
+			output = "${miscaddindir}/AddinScout/AddinScout.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "AddinScout">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+			</references>
+		</csc>
+
+		<!-- compile AssemblyAnalyser AddIn -->
+		<echo message = "Building assembly analyser"/>
+		<mkdir dir = "${assemblyanalyserdir}"/>
+		<csc 
+			target = "library" 
+			output = "${bindir}/ICSharpCode.AssemblyAnalyser.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "AssemblyAnalyser/ICSharpCode.AssemblyAnalyzer">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+			</references>
+		</csc>
+		<csc 
+			target = "library" 
+			output = "${assemblyanalyserdir}/ICSharpCode.AssemblyAnalyser.AddIn.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "AssemblyAnalyser/ICSharpCode.AssemblyAnalyzer.AddIn">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name = "ICSharpCode.AssemblyAnalyser.dll"/>
+			</references>
+		</csc>
+		<copy todir = "${assemblyanalyserdir}">
+            		<fileset basedir = "AssemblyAnalyser/ICSharpCode.AssemblyAnalyzer.AddIn">
+            			<includes name = "AssemblyAnalyser.addin"/>
+			</fileset>
+		</copy>
+		<!-- compile NUnit Pad AddIn -->
+		<echo message = "Building NUnit pad"/>
+		<mkdir dir = "${nunitpaddir}"/>
+		<csc 
+			target = "library" 
+			output = "${nunitpaddir}/ICSharpCode.NUnitPad.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "NUnitPad">
+				<includes name = "**/*.cs"/>
+			</sources>
+			
+			<references basedir = "${bindir}">
+				<includes name = "ICSharpCode.Core.dll"/>
+				<includes name = "SharpDevelop.Base.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name = "CommandBar.dll"/>
+				<includes name = "nunit.framework.dll"/>
+				<includes name = "nunit.core.dll"/>
+				<includes name = "nunit.util.dll"/>
+			</references>
+		</csc>
+		<copy todir = "${nunitpaddir}">
+            		<fileset basedir = "NUnitPad">
+				<includes name = "ICSharpCode.NUnitPad.addin"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name = "clean">
+		<delete verbose = "true" >
+			<fileset basedir = "${miscaddindir}">
+				<includes name = "RegExpTk/RegExpTk.dll"/>
+				<includes name = "AddinScout/AddinScout.dll"/>
+				<includes name = "StartPage/ICSharpCode.StartPage.dll"/>
+				<includes name = "FiletypeRegisterer/ICSharpiode.FiletypeRegisterer.dll"/>
+				<includes name = "HighlightingEditor/SharpDevelop.HighlightingEditor.dll"/>
+				<includes name = "ProjectImporterExporter/ICSharpCode.ProjectImporterExporter.dll"/>
+				<includes name = "SharpQuery/SharpQuery.dll"/>
+				
+				<!-- debug info -->
+				<includes name = "RegExpTk/RegExpTk.pdb"/>
+				<includes name = "AddinScout/AddinScout.pdb"/>
+				<includes name = "StartPage/ICSharpCode.StartPage.pdb"/>
+				<includes name = "FiletypeRegisterer/ICSharpCode.FiletypeRegisterer.pdb"/>
+				<includes name = "HighlightingEditor/SharpDevelop.HighlightingEditor.pdb"/>
+				<includes name = "ProjectImporterExporter/ICSharpCode.ProjectImporterExporter.pdb"/>
+				<includes name = "SharpQuery/SharpQuery.pdb"/>
+			</fileset>
+		</delete>
+		<delete dir="${assemblyanalyserdir}"  failonerror="false"/>
+		<delete dir="${nunitpaddir}"  failonerror="false"/>
+
+	        <delete verbose = "true" >
+			<fileset basedir = "${bindir}">
+				<includes name = "ICSharpCode.AssemblyAnalyser.dll"/>
+				<includes name = "ICSharpCode.AssemblyAnalyser.pdb"/>
+			</fileset>
+		</delete>
+	</target>
+</project>

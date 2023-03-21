@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+
+<project name="SharpDevelop - Libraries" default="build" basedir=".">
+	<target name="build">
+		<echo message="Copying required assemblies"/>
+		<copy todir="${bindir}">
+			<fileset basedir="RequiredAssemblies">
+				<includes name="*"/>
+			</fileset>
+		</copy>
+		<copy todir="${addindir}/AddIns/BackendBindings">
+			<fileset basedir="RequiredAssemblies/BackEndBindings">
+				<includes name="*"/>
+			</fileset>
+		</copy>
+
+		<echo message="Building CommandBar library"/>
+		<csc 
+			target="library" 
+			output="${bindir}/CommandBar.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="CommandBar/Library">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+
+		<echo message="Building WeifenLuo.WinFormsUI library"/>
+		<csc 
+			target="library" 
+			output="${bindir}/WeifenLuo.WinFormsUI.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+
+			<resources basedir="WinFormsUI/WinFormsUI/Resources">
+				<includes name="*.*"/>
+			</resources>
+				
+			<sources basedir="WinFormsUI/WinFormsUI">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		<!--	
+		<echo message="Building ICSharpCode.Debugger"/>
+		<copy todir="${bindir}">
+			<fileset basedir="ICSharpCode.Debugger/bin/Release">
+				<includes name="ICSharpCode.Debugger.dll"/>
+			</fileset>
+		</copy>
+		-->
+		<echo message="Building ICSharpCode.XmlForms"/>
+		<csc 
+			target="library" 
+			output="${bindir}/ICSharpCode.XmlForms.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="ICSharpCode.XmlForms">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+
+		<echo message="Building #Assembly"/>
+		<csc 
+			target="library" 
+			output="${bindir}/ICSharpCode.SharpAssembly.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="SharpAssembly/src/SharpAssembly">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		
+		<echo message="Building #Refactory"/>
+		<csc 
+			target="library" 
+			output="${bindir}/ICSharpCode.SharpRefactory.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="SharpRefactory/src">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		
+		<echo message="Building VBRefactory"/>
+		<csc 
+			target="library" 
+			output="${bindir}/ICSharpCode.SharpRefactoryVB.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="SharpRefactoryVB/src">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+
+		<echo message = "Building SharpDevelop Text Editor"/>
+		<csc 
+			target = "library" 
+			output = "${bindir}/ICSharpCode.TextEditor.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "ICSharpCode.TextEditor">
+				<includes name = "**/*.cs"/>
+			</sources>
+
+			<resources basedir = "ICSharpCode.TextEditor/data">
+				<includes name = "Mode.xsd"/>
+				<includes name = "RightArrow.cur"/>
+				<includes name = "ICSharpCode.TextEditor.TextEditorControl.bmp"/>
+				
+				<!-- syntax modes -->
+				<includes name = "syntaxmodes/SyntaxModes.xml"/>
+				<includes name = "syntaxmodes/*.xshd"/>
+			</resources>
+			
+		</csc>
+
+		<echo message = "Building NUnit framework"/>
+		<csc 
+			target = "library" 
+			output = "NUnitFramework/bin/nunit.framework.dll" 
+			define = "StronglyNamedAssembly"
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "NUnitFramework/src/framework">
+				<includes name = "**/*.cs"/>
+			</sources>
+		</csc>
+		<csc 
+			target = "library" 
+			output = "NUnitFramework/bin/nunit.core.dll" 
+			define = "StronglyNamedAssembly"
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "NUnitFramework/src/core">
+				<includes name = "**/*.cs"/>
+			</sources>
+			<references basedir = "NUnitFramework/bin">
+				<includes name = "nunit.framework.dll"/>
+			</references>
+		</csc>
+		
+
+		<csc 
+			target = "library" 
+			output = "NUnitFramework/bin/nunit.util.dll" 
+			define = "StronglyNamedAssembly"
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir = "NUnitFramework/src/util">
+				<includes name = "**/*.cs"/>
+			</sources>
+			<references basedir = "NUnitFramework/bin">
+				<includes name = "nunit.core.dll"/>
+				<includes name = "nunit.framework.dll"/>
+			</references>
+			
+			<resources basedir = "NUnitFramework/resources">
+				<includes name = "NUnit.Util.Transform.resources"/>
+			</resources> 
+		</csc>
+		
+		<copy todir="${bindir}">
+			<fileset basedir="NUnitFramework/bin">
+				<includes name="*.dll"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<delete verbose="true" >
+			<fileset basedir="${addindir}/AddIns/BackendBindings">
+				<includes name = "CommentExtractor.dll"/>
+			</fileset>
+		</delete>
+		<delete verbose="true" >
+			<fileset basedir="${bindir}">
+				<includes name = "ICSharpCode.SharpZipLib.dll"/>
+				<includes name = "ICSharpCode.XmlForms.dll"/>
+				<includes name = "ICSharpCode.SharpAssembly.dll"/>
+				<includes name = "ICSharpCode.SharpRefactory.dll"/>
+				<includes name = "ICSharpCode.SharpRefactoryVB.dll"/>
+				<includes name = "CommandBar.dll"/>
+				<includes name = "ICSharpCode.TextEditor.dll"/>
+				<includes name = "WeifenLuo.WinFormsUI.dll"/>
+				<includes name = "ICSharpCode.Debugger.dll"/>
+				<includes name = "nunit.util.dll"/>
+				<includes name = "nunit.core.dll"/>
+				<includes name = "nunit.framework.dll"/>
+				
+				<!-- debug info -->
+				<includes name = "ICSharpCode.SharpZipLib.pdb"/>
+				<includes name = "ICSharpCode.XmlForms.pdb"/>
+				<includes name = "ICSharpCode.SharpAssembly.pdb"/>
+				<includes name = "ICSharpCode.SharpRefactory.pdb"/>
+				<includes name = "ICSharpCode.SharpRefactoryVB.pdb"/>
+				<includes name = "CommandBar.pdb"/>
+				<includes name = "WeifenLuo.WinFormsUI.pdb"/>
+
+				<!-- required assemblies -->
+				<includes name="HtmlEditor.dll"/>
+				<includes name="Interop.SHDocVw.dll"/>
+				<includes name="Microsoft.mshtml.dll"/>
+				<includes name="ICSharpCode.TextEditor.pdb"/>
+			</fileset>
+		</delete>
+	</target>
+</project>

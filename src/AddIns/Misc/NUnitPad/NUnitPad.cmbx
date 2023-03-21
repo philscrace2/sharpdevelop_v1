@@ -1,0 +1,16 @@
+<Combine fileversion="1.0" name="ICSharpCode.NUnitPad" description="">
+  <StartMode startupentry="ICSharpCode.NUnitPad" single="True">
+    <Execute entry="ICSharpCode.NUnitPad" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\.\NUnitPad.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="ICSharpCode.NUnitPad" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="ICSharpCode.NUnitPad" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

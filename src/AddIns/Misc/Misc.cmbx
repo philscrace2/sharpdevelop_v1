@@ -1,0 +1,46 @@
+<Combine fileversion="1.0" name="Misc" description="">
+  <StartMode startupentry="" single="True">
+    <Execute entry="FiletypeRegisterer" type="None" />
+    <Execute entry="HighlightingEditor" type="None" />
+    <Execute entry="RegExpTk" type="None" />
+    <Execute entry="SharpQuery" type="None" />
+    <Execute entry="StartPage" type="None" />
+    <Execute entry="ProjectImporterExporter" type="None" />
+    <Execute entry="ICSharpCode.NUnitPad" type="None" />
+    <Execute entry="AssemblyAnalyser" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\FiletypeRegisterer\FiletypeRegisterer.prjx" />
+    <Entry filename=".\HighlightingEditor\HighlightingEditor.prjx" />
+    <Entry filename=".\RegExpTk\RegExpTk.prjx" />
+    <Entry filename=".\SharpQuery\SharpQuery.prjx" />
+    <Entry filename=".\StartPage\StartPage.prjx" />
+    <Entry filename=".\ProjectImporterExporter\src\ProjectImporterExporter.prjx" />
+    <Entry filename=".\NUnitPad\NUnitPad.prjx" />
+    <Entry filename=".\AssemblyAnalyser\AssemblyAnalyzer.cmbx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="FiletypeRegisterer" configurationname="Release" build="False" />
+      <Entry name="HighlightingEditor" configurationname="Release" build="False" />
+      <Entry name="RegExpTk" configurationname="Debug" build="False" />
+      <Entry name="SharpQuery" configurationname="Debug" build="False" />
+      <Entry name="StartPage" configurationname="Debug" build="False" />
+      <Entry name="ProjectImporterExporter" configurationname="Debug" build="False" />
+      <Entry name="FiletypeRegisterer" configurationname="Release" build="False" />
+      <Entry name="ICSharpCode.NUnitPad" configurationname="Debug" build="False" />
+      <Entry name="AssemblyAnalyser" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="FiletypeRegisterer" configurationname="Release" build="False" />
+      <Entry name="HighlightingEditor" configurationname="Release" build="False" />
+      <Entry name="RegExpTk" configurationname="Debug" build="False" />
+      <Entry name="SharpQuery" configurationname="Debug" build="False" />
+      <Entry name="StartPage" configurationname="Debug" build="False" />
+      <Entry name="ProjectImporterExporter" configurationname="Debug" build="False" />
+      <Entry name="FiletypeRegisterer" configurationname="Release" build="False" />
+      <Entry name="ICSharpCode.NUnitPad" configurationname="Debug" build="False" />
+      <Entry name="AssemblyAnalyser" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

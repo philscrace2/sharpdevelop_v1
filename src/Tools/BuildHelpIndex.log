@@ -1,0 +1,9 @@
+C:\SharpDevelop\Repository\SharpDevelop\src\Tools> C:\SharpDevelop\Repository\SharpDevelop\bin\setup\..\tools\HelpConverter.exe
+Parse hhc : SharpDevelop.hhc
+Parse hhc : 031SharpZipLib.hhc
+trying to load : Microsoft.DirectX
+Failure
+ZIP Help Contents
+zip C:\SharpDevelop\Repository\SharpDevelop\bin\tools\..\..\doc\help\HelpConv.xml
+remove C:\SharpDevelop\Repository\SharpDevelop\bin\tools\..\..\doc\help\HelpConv.xml from disk
+finished

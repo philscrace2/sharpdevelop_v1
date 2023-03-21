@@ -1,0 +1,16 @@
+<Combine fileversion="1.0" name="WixBinding" description="">
+  <StartMode startupentry="WixBinding" single="True">
+    <Execute entry="WixBinding" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\WixBinding.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="WixBinding" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="WixBinding" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

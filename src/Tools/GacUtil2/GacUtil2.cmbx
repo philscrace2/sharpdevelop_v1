@@ -1,0 +1,16 @@
+<Combine fileversion="1.0" name="GacUtil2" description="">
+  <StartMode startupentry="GacUtil2" single="True">
+    <Execute entry="GacUtil2" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\.\GacUtil2.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="GacUtil2" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="GacUtil2" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

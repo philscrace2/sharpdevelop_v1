@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+
+<project name="SharpDevelop" default="build" basedir=".">
+	
+	<!-- Properties used in the #Develop build process  -->
+	<property name="debug"         value = "False"/>
+	<property name="optimize"      value = "True"/>
+	
+	<property name="version"       value = "1.0.3"/>
+	<property name="ziplibversion" value = "0.82.0"/>
+	
+	<property name="startuptarget" value = "winexe"/>
+	<property name="basedir"       value = "${nant.project.basedir}"/>
+	<property name="bindir"        value = "${nant.project.basedir}/../bin"/>
+	<property name="addindir"      value = "${nant.project.basedir}/../AddIns"/>
+	<property name="resourcesdir"  value = "${nant.project.basedir}/../data/resources"/>
+
+	<!-- Check Authors + ChangeLog XML for errors -->
+	<target name="releasebuild">
+		<script language="C#">
+			<code><![CDATA[
+		static StringCollection SearchDirectory(string directory, string filemask)
+		{
+			StringCollection collection = new StringCollection();
+			SearchDirectory(directory, filemask, collection);
+			return collection;
+		}
+		
+		static void SearchDirectory(string directory, string filemask, StringCollection collection)
+		{
+			try {
+				string[] file = Directory.GetFiles(directory, filemask);
+				foreach (string f in file) {
+					collection.Add(f);
+				}
+				
+				string[] dir = Directory.GetDirectories(directory);
+				foreach (string d in dir) {
+					SearchDirectory(d, filemask, collection);
+				}
+			} catch (Exception) {
+			}
+		}
+		
+		static Regex AssemblyVersion = new Regex("AssemblyVersion\\(.*\\)]");
+		static void SetVersionInfo(string fileName, string version)
+		{
+			StreamReader inFile = null;
+			string       content;
+			
+			try {
+				inFile  = new StreamReader(fileName);
+				content = inFile.ReadToEnd();
+			} catch (Exception e) {
+					Console.WriteLine(e);
+					return;
+			} finally {
+				if (inFile != null) {
+					inFile.Close();
+				}
+			}
+			
+			if (content != null) {
+				string newContent = AssemblyVersion.Replace(content, "AssemblyVersion(\"" + version + "\")]");
+				StreamWriter outFile = null;
+				try {
+					outFile = new StreamWriter(fileName);
+					outFile.Write(newContent);
+				} catch (Exception e) {
+					Console.WriteLine(e);
+					return;
+				} finally {
+					if (outFile != null) {
+						outFile.Close();
+					}
+				}
+			}
+		}
+		
+		static string revisionNumber = "0";
+		static string ReadRevisionFromFile()
+		{
+			try {
+				StreamReader reader = new StreamReader(@"..\REVISION");
+				using (reader) {
+					return reader.ReadLine();
+				}
+			}
+			catch (Exception e) {
+				Console.WriteLine(e.Message);
+				throw new Exception("Cannot read revision number from file: " + e.Message);
+			}
+		}
+		static void RetrieveRevisionNumber()
+		{
+			try {
+				System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("svn", "info");
+				psi.UseShellExecute = false;
+				psi.RedirectStandardOutput = true;
+				
+				try {
+					System.Diagnostics.Process process = System.Diagnostics.Process.Start(psi);
+					process.WaitForExit();
+					string output = process.StandardOutput.ReadToEnd();
+					
+					Regex r = new Regex(@"Revision:\s+(\d+)");
+					Match m = r.Match(output);
+					if (m != null && m.Success && m.Groups[1] != null) {
+						revisionNumber = m.Groups[1].Value;
+					}
+					if (revisionNumber == null || revisionNumber.Equals("") || revisionNumber.Equals("0")) {
+						throw new Exception("Could not find revision number in svn output");
+					}
+				} catch (Exception e) {
+					Console.WriteLine(e.Message);
+					revisionNumber = ReadRevisionFromFile();
+				}
+			} catch {
+			}
+		}
+
+		static void SetVersion(string directory, string version)
+		{
+			StringCollection col = SearchDirectory(directory, "AssemblyInfo.cs");
+			string[] dontTouchList = new string[] { 
+				"Libraries/CommandBar/Library/AssemblyInfo.cs",
+				"Libraries/NUnitFramework/src/core/AssemblyInfo.cs",
+				"Libraries/NUnitFramework/src/framework/AssemblyInfo.cs",
+				"Libraries/NUnitFramework/src/util/AssemblyInfo.cs",
+				"Libraries/WinFormsUI/WinFormsUI/AssemblyInfo.cs"
+				};
+			string versionNumber = version + "." + revisionNumber;
+			foreach (string fileName in col) {
+				bool doSetVersion = true;
+				foreach (string dontTouch in dontTouchList) {
+					if (fileName.EndsWith(dontTouch.Replace("/", Path.DirectorySeparatorChar.ToString()))) {
+						doSetVersion = false;
+						break;
+					}
+				}
+				if (doSetVersion) {
+					Console.WriteLine("set revision to file : " + fileName + " to " + versionNumber);
+					SetVersionInfo(fileName, versionNumber);
+				}
+			}
+		}
+		
+		public static void ScriptMain(Project project) 
+		{
+			RetrieveRevisionNumber();
+			SetVersion(".", project.Properties["version"].ToString());
+			SetVersion("Libraries\\SharpZipLib", project.Properties["ziplibversion"].ToString());
+		}
+			]]></code>
+		</script>
+		<call target="build"/>	
+	</target>
+	
+	<target name="build">
+		<script language="C#">
+			<code><![CDATA[
+			static bool IsInvalidXmlFile(string fileName) 
+			{
+				System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
+			        try {
+			            xmlDocument.Load(fileName);
+			        } catch (Exception e) {
+			            Console.WriteLine("File error : " + fileName + " exception was : " + e.ToString());
+			            return true;
+			        }
+			        return false;
+			}
+
+			public static void ScriptMain(Project project)  
+			{
+				char s = System.IO.Path.DirectorySeparatorChar;
+				
+				if (IsInvalidXmlFile(".." + s + "doc" + s + "ChangeLog.xml")) {
+					throw new Exception("invalid XML files found!!!");
+				}
+			}
+			]]></code>
+		</script>
+	
+		<!-- 3rd party addins; disabled CW 9/14/2004 -->
+		<!-- <nant buildfile = "3rdParty/3rdParty.build"/> -->
+		<nant buildfile = "Libraries/Libraries.build"/>
+		<nant buildfile = "Tools/Tools.build"/>
+		<nant buildfile = "Main/Main.build"/>
+		<nant buildfile = "AddIns/AddIns.build"/>
+	</target>
+	
+	<!-- Currently 1 file compilation doesn't work-->
+	<target name="onefile">
+		<echo message="Copying required assemblies"/>
+		<copy todir="${bindir}">
+			<fileset basedir="Libraries/RequiredAssemblies">
+				<includes name="*"/>
+			</fileset>
+		</copy>
+		<echo message="Building ICSharpCode.Debugger"/>
+		<copy todir="${bindir}">
+			<fileset basedir="Libraries/ICSharpCode.Debugger/Release">
+				<includes name="ICSharpCode.Debugger.dll"/>
+			</fileset>
+		</copy>
+		<csc 
+			target    = "${startuptarget}" 
+			output    = "${bindir}/SharpDevelop.exe" 
+			win32icon = "${resourcesdir}/SharpDevelop.ico"
+			mainclass = "ICSharpCode.SharpDevelop.SharpDevelopMain"
+			optimize  = "${optimize}"
+			debug     = "${debug}">
+			
+			<sources basedir="${basedir}">
+				<includes name="Libraries/**/*.cs"/>
+				<includes name="Main/**/*.cs"/>
+				<includes name="AddIns/**/*.cs"/>
+				<excludes name = "Libraries/CsVbRefactory/**/*.cs"/>
+				<excludes name = "Libraries/SharpRefactory/tests/**/*.cs"/>
+				<excludes name = "Libraries/SharpZipLib/samples/**/*.cs"/>
+				<excludes name = "Main/SharpDevelopTests/**/*.cs"/>
+				<excludes name = "Libraries/SharpZipLib/src/ICSharpCode.SharpZLibTestCases/**/*.cs"/>
+				<excludes name = "Libraries/SharpAssembly/src/SharpAssemblyTest/**/*.cs"/>
+				<excludes name = "AddIns/DisplayBindings/HtmlEditor/**/*.cs"/>
+				<excludes name = "AddIns/FiletypeRegisterer/Unregister/*.cs"/>
+			</sources>
+			
+			<resources basedir="${resourcesdir}">
+				<!-- Main resources -->
+				<includes name="AddIn.xsd"/>
+				
+				<includes name="BitmapResources.resources"/>
+				<includes name="StringResources.resources"/>
+				<includes name="SplashScreen.png"/>
+				<!-- Library resources -->
+				<includes name="Libraries/WinFormsUI/WinFormsUI/Resources/*.*"/>
+				<includes name="Libraries/ICSharpCode.TextEditor/data/*.*"/>
+				<!-- Wizard resources -->
+				<includes name = "AddIns/Wizards/MessageBoxBuilder/data/CodeGenerationPanel.xfrm"/>
+				<includes name = "AddIns/Wizards/MessageBoxBuilder/data/VisiblePropertiesPanel.xfrm"/>
+				<!-- Misc addin resources -->
+				<includes name = "AddIns/Misc/ProjectImporterExporter/data/*.*"/>
+			</resources>
+			
+			<references basedir="${bindir}">
+				<includes name="*.dll"/>
+				<excludes name = "VB.DOCParser.dll"/>
+			</references>
+		</csc>
+
+	</target>
+	
+	<target name="clean">
+		<nant buildfile = "Libraries/Libraries.build" target = "clean"/>
+		<nant buildfile = "Main/Main.build"           target = "clean"/>
+		<nant buildfile = "AddIns/AddIns.build"       target = "clean"/>
+		<nant buildfile = "Tools/Tools.build"         target = "clean"/>
+		
+		<!-- 3rd party addins; disabled CW 9/14/2004  -->
+		<!-- <nant buildfile = "3rdParty/3rdParty.build"   target = "clean"/> -->
+	</target>
+	
+	<!-- helper target -->
+	<target name="libsandmain">
+		<nant buildfile = "Libraries/Libraries.build"/>
+		<nant buildfile = "Main/Main.build"/>
+	</target>
+</project>

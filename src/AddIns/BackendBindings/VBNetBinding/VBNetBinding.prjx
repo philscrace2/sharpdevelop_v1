@@ -1,0 +1,114 @@
+<Project name="VBNetBinding" standardNamespace="NewProject" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\VBBindingCompilerServices.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\VBLanguageBinding.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Project\VBProject.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Project\VBCompilerParameters.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\VBBindingExecutionServices.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\FormattingStrategy\VBFormattingStrategy.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Gui\OutputOptionsPanel.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Gui\CodeGenerationPanel.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Gui\VBDocConfigurationPanel.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\VBLanguageConversion.cs" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\VBBindingCompilerServices.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\VBBindingExecutionServices.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\VBDocServices.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\VBLanguageBinding.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\VBLanguageConversion.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\prop-base\VBNetBinding.prjx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\VBBindingCompilerServices.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\VBBindingExecutionServices.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\VBDocServices.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\VBLanguageBinding.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\VBLanguageConversion.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\props\VBNetBinding.prjx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\VBBindingCompilerServices.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\VBBindingExecutionServices.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\VBDocServices.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\VBLanguageBinding.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\VBLanguageConversion.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\text-base\VBNetBinding.prjx.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\VBBindingCompilerServices.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\VBBindingExecutionServices.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\VBDocServices.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\VBLanguageBinding.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\VBLanguageConversion.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\.svn\wcprops\VBNetBinding.prjx.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\FormattingStrategy\.svn\prop-base\VBFormattingStrategy.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\FormattingStrategy\.svn\props\VBFormattingStrategy.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\FormattingStrategy\.svn\text-base\VBFormattingStrategy.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\FormattingStrategy\.svn\wcprops\VBFormattingStrategy.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\TextEditorOptionsPanel.cs" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\prop-base\CodeGenerationPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\prop-base\OutputOptionsPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\prop-base\TextEditorOptionsPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\prop-base\VBDocConfigurationPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\props\CodeGenerationPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\props\OutputOptionsPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\props\TextEditorOptionsPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\props\VBDocConfigurationPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\text-base\CodeGenerationPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\text-base\OutputOptionsPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\text-base\TextEditorOptionsPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\text-base\VBDocConfigurationPanel.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\wcprops\CodeGenerationPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\wcprops\OutputOptionsPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\wcprops\TextEditorOptionsPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Gui\.svn\wcprops\VBDocConfigurationPanel.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Parser\VBNetVisitor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\AttributeSection.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Class.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\CompilationUnit.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Constructor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Event.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Field.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Indexer.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Method.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Parameter.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\Property.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\SharpDevelopTree\ReturnType.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Project\.svn\prop-base\VBCompilerParameters.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\prop-base\VBProject.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\props\VBCompilerParameters.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\props\VBProject.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\text-base\VBCompilerParameters.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\text-base\VBProject.cs.svn-base" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\wcprops\VBCompilerParameters.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Project\.svn\wcprops\VBProject.cs.svn-work" subtype="Code" buildaction="Exclude" dependson="" data="" />
+    <File name=".\Parser\Parser.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\TypeVisitor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\Resolver.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\VBAmbience.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Parser\ExpressionFinder.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Gui\VBCompilerPanel.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\VBDOCCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Gui\GuiMessageRecipient.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.Core.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.TextEditor.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.XmlForms.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\SharpDevelop.Base.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.SharpRefactoryVB.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\AddIns\AddIns\BackendBindings\CommentExtractor.dll" localcopy="False" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="False" />
+    <Output directory="..\..\..\..\AddIns\AddIns\BackendBindings" assembly="VBNetBinding" executeScript="..\..\..\..\bin\SharpDevelop.exe" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory="..\..\..\..\AddIns\AddIns\BackendBindings" assembly="VBNetBinding" executeScript="..\..\..\..\bin\SharpDevelop.exe" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="True" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory="..\..\..\..\AddIns\AddIns\BackendBindings" assembly="VBNetBinding" executeScript="..\..\..\..\bin\SharpDevelop.exe" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>

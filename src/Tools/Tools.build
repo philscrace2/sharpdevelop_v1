@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+
+<project name = "SharpDevelop - Tools" default = "build" basedir = ".">
+	<property name = "toolsdir" value="${bindir}/tools"/>
+	<property name = "setupdir" value="${bindir}/setup"/>
+	<property name = "nprofdir" value="${bindir}/nprof"/>
+	<property name = "nantdir"  value="${bindir}/nant"/>
+	<property name = "ndocdir"  value="${bindir}/ndoc"/>
+	<property name = "wixdir"   value="${bindir}/wix"/>
+
+	<target name = "build">
+		<mkdir dir = "${toolsdir}"/>
+		<copy todir = "${toolsdir}">
+			<fileset basedir = "${bindir}">
+				<includes name = "ICSharpCode.SharpZipLib.dll"/>
+			</fileset>
+		</copy>
+		
+		<!-- compile resasm -->
+		<echo message = "Building ResourceAssembler"/>
+		<csc 
+			target = "exe" 
+			output = "${toolsdir}/ResourceAssembler.exe" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir="ResourceAssembler">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		
+		<echo message="Building LocalizationDbToResFile"/>
+		<csc 
+			target = "exe" 
+			output = "${toolsdir}/LocalizationDbToResFile.exe" 
+			optimize="${optimize}"
+			debug  = "False">
+			
+			<sources basedir="LocalizationDbToResFile">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		
+		<echo message="Building LocalizationXmlToResFile"/>
+		<csc 
+			target = "exe" 
+			output = "${toolsdir}/LocalizationXmlToResFile.exe" 
+			optimize="${optimize}"
+			debug  = "False">
+			
+			<sources basedir="LocalizationXmlToResFile">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		
+		<!-- compile help browser app -->
+		<echo message="Building HelpConverter"/>
+		<csc 
+			target = "exe" 
+			output = "${toolsdir}/HelpConverter.exe" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir="HelpConverter">
+				<includes name="**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.SharpZipLib.dll"/>
+			</references>
+			
+		</csc>
+		
+		<!-- compile help browser app -->
+		<echo message="Building SharpCoco"/>
+		<csc 
+			target = "exe" 
+			output = "${toolsdir}/SharpCoco.exe" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir="SharpCoco/src">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+			
+		<echo message="Building SVN changelog converter"/>
+		<csc 
+			target = "exe" 
+			output = "${toolsdir}/SVNChangeLogToXml.exe" 
+			optimize="${optimize}"
+			debug  = "False">
+			
+			<sources basedir="SVNChangeLogToXml">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+
+		<echo message = "Copying nprof"/>
+		<mkdir dir = "${nprofdir}"/>
+		<copy todir = "${nprofdir}">
+            		<fileset basedir = "nprof/bin">
+            			<includes name = "*.*"/>
+			</fileset>
+		</copy>
+		
+		<echo message = "Copying nant"/>
+		<mkdir dir = "${nantdir}"/>
+		<copy todir = "${nantdir}">
+            		<fileset basedir = "nant/bin">
+            			<includes name = "*.*"/>
+			</fileset>
+		</copy>
+
+		<echo message = "Copying ndoc"/>
+		<mkdir dir = "${ndocdir}"/>
+		<copy todir = "${ndocdir}">
+			<fileset basedir = "ndoc/bin">
+				<includes name = "*.*"/>
+			</fileset>
+		</copy>
+
+		<echo message = "Copying wix"/>
+		<mkdir dir = "${wixdir}"/>
+		<copy todir = "${wixdir}">
+			<fileset basedir = "wix">
+				<includes name = "*.*"/>
+			</fileset>
+		</copy>
+
+		<echo message = "Copying gacutil2"/>
+		<copy todir = "${toolsdir}">
+			<fileset basedir = "gacutil2">
+				<includes name = "*.exe"/>
+			</fileset>
+		</copy>
+
+		<echo message = "Building help index builder"/>
+		<csc
+			target = "exe" 
+			output = "${setupdir}/BuildHelpIndex.exe" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir="BuildHelpIndex">
+				<includes name="**/*.cs"/>
+			</sources>
+		</csc>
+		
+		<echo message="Building help index"/>
+		<exec program="${setupdir}/BuildHelpIndex.exe"/>
+	</target>
+	
+	<target name="clean">
+		<delete verbose="true" >
+			<fileset basedir="${bindir}">
+				<includes name="../doc/help/SharpDevelopHelp.zip" />
+			</fileset>
+		</delete>
+		
+		<delete verbose="true" >
+			<fileset basedir="${setupdir}">
+				<includes name="BuildHelpIndex.exe" />
+			</fileset>
+		</delete>
+
+		<delete dir="${nantdir}"  failonerror="false"/>
+		<delete dir="${nprofdir}" failonerror="false"/>
+		<delete dir="${ndocdir}"  failonerror="false"/>
+		<delete dir="${wixdir}"   failonerror="false"/>
+		<delete dir="${toolsdir}" failonerror="false"/>
+	</target>	
+</project>

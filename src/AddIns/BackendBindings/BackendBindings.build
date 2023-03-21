@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+
+<project name="Backend Bindings" default="build" basedir=".">
+	<property name = "backenddir" value="${addindir}/AddIns/BackendBindings"/>
+	
+	<target name="build">
+		
+		<!-- compile CSharp backend binding -->
+		<echo message="Building C# backend binding"/>
+	        <csc 
+			target="library" 
+			output="${backenddir}/CSharpBinding.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="CSharpBinding">
+				<includes name="**/*.cs"/>
+			</sources>
+
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="ICSharpCode.SharpRefactory.dll"/>
+				<includes name="ICSharpCode.Debugger.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+
+		<!-- compile C++.NET backend binding -->
+		<echo message="Building C++.NET backend binding"/>
+	        <csc 
+			target="library" 
+			output="${backenddir}/CPPNetBinding.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="CPPNetBinding">
+				<includes name="**/*.cs"/>
+			</sources>
+
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="ICSharpCode.SharpRefactory.dll"/>
+				<includes name="ICSharpCode.Debugger.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+
+		<!-- compile VB.NET backend binding -->
+		<echo message="Building VB.NET backend binding"/>
+	        <csc 
+			target = "library" 
+			output = "${backenddir}/VBNetBinding.dll" 
+			optimize="${optimize}"
+			debug  = "${debug}">
+			
+			<sources basedir="VBNetBinding">
+				<includes name="**/*.cs"/>
+			</sources>
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="ICSharpCode.SharpRefactoryVB.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+				<includes name="../AddIns/AddIns/BackendBindings/CommentExtractor.dll"/>
+			</references>
+		</csc>
+	        
+		<!-- compile Java backend binding -->
+		<echo message = "Building Java backend binding"/>
+		<csc 
+			target="library" 
+			output = "${backenddir}/JavaBinding.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="JavaBinding">
+				<includes name="**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="ICSharpCode.Debugger.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+		
+		<!-- compile Wix backend binding -->
+		<echo message = "Building Wix backend binding"/>
+		<csc 
+			target="library" 
+			output = "${backenddir}/WixBinding.dll" 
+			optimize="${optimize}"
+			debug="${debug}">
+			
+			<sources basedir="WixBinding">
+				<includes name="**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="ICSharpCode.Debugger.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+		
+		<!-- compile ILAsm backend binding -->
+		<echo message = "Building ILAsm backend binding"/>
+		<csc 
+			target   = "library" 
+			output   = "${backenddir}/ILAsmBinding.dll" 
+			optimize = "${optimize}"
+			debug    = "${debug}">
+			
+			<sources basedir="ILAsmBinding">
+				<includes name="**/*.cs"/>
+			</sources>
+			
+			<references basedir="${bindir}">
+				<includes name="ICSharpCode.Core.dll"/>
+				<includes name="ICSharpCode.XmlForms.dll"/>
+				<includes name="ICSharpCode.TextEditor.dll"/>
+				<includes name="ICSharpCode.Debugger.dll"/>
+				<includes name="SharpDevelop.Base.dll"/>
+			</references>
+		</csc>
+	</target>
+	
+	<target name="clean">
+		<delete verbose="true" >
+			<fileset basedir="${backenddir}">
+				<includes name="CSharpBinding.dll"/>
+				<includes name="VBNetBinding.dll"/>
+				<includes name="CPPNetBinding.dll"/>
+				<includes name="JavaBinding.dll"/>
+				<includes name="WixBinding.dll"/>
+				<includes name="ILAsmBinding.dll"/>
+
+				<!-- debug infos -->
+				<includes name="CSharpBinding.pdb"/>
+				<includes name="VBNetBinding.pdb"/>
+				<includes name="CPPNetBinding.pdb"/>
+				<includes name="JavaBinding.pdb"/>
+				<includes name="WixBinding.pdb"/>
+				<includes name="ILAsmBinding.pdb"/>
+			</fileset>
+		</delete>
+	</target>
+</project>

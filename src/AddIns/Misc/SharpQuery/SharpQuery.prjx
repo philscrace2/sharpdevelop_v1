@@ -1,0 +1,81 @@
+<Project name="SharpQuery" standardNamespace="NewProject" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SharpQueryView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\SharpQueryPanel.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\SharpQueryTree\SharpQueryTree.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\SharpQueryTree" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\SharpQueryTree\SharpQueryNodesRoot.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SchemaClass\SharpQuerySchemaClass.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\SharpQueryCommands.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Collection" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\Interface\ISharpQueryNode.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\Abstract\AbstractSharpQueryNode.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\SharpQueryTree\SharpQueryDataNodes.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\Abstract" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\Interface" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\DataView" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\DataView\SharpQueryDataView.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Collection\SharpQueryStringDictionary.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\Abstract" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\SchemaClass\Abstract\AbstractSharpQuerySchemaClass.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\Abstract\AbstractSharpQueryConnectionWrapper.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Codons" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Codons\SharpQueryConnectionCodon.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\SharpQuery.addin" subtype="Code" buildaction="Nothing" dependson="" data="" />
+    <File name=".\Connection\Interface" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\SchemaClass\Interface\ISchemaClass.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Collection\SharpQuerySchemaClassCollection.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\Interface\IConnection.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Collection\SharpQueryListDictionary.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\Abstract" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Commands\Abstract\AbstractSharpQueryCommand.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\ADOConnectionWrapper" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\SchemaClass" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\SchemaClass\Interface" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\SchemaClass\Abstract" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\AddIn.xsd" subtype="Code" buildaction="Nothing" dependson="" data="" />
+    <File name=".\Connection\ADOConnectionWrapper\ADOConnectionWrapper.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\OleDB" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\OleDB" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Connection\OleDB\OLEDBConnectionWrapper.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GUI\DataView\SQLParameterInput.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions\ConnectionStringException.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions\OpenConnectionException.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions\ExecuteSQLException.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions\ExecuteProcedureException.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions\Abstract" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\Exceptions\Abstract\SharpQueryAbstractException.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\Collection\SharpQueryParameterCollection.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.Core.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\SharpDevelop.Base.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.SharpAssembly.dll" localcopy="False" />
+    <Reference type="Assembly" refto="..\..\..\..\bin\ICSharpCode.XmlForms.dll" localcopy="False" />
+    <Reference type="Typelib" refto="Microsoft ActiveX Data Objects 2.7 Library|C:\Program Files\Fichiers communs\System\ado\msado15.dll{EF53050B-882E-4776-B643-EDA472E8E3F2}" localcopy="True" />
+    <Reference type="Typelib" refto="Microsoft OLE DB Service Component 1.0 Type Library|C:\Program Files\Fichiers communs\System\Ole DB\oledb32.dll{2206CEB0-19C1-11D1-89E0-00C04FD7A829}" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+    <Execution commandlineparameters="" consolepause="False" />
+    <Output directory="..\..\..\..\AddIns\AddIns\Misc\SharpQuery" assembly="SharpQuery" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory="..\..\..\..\AddIns\AddIns\Misc\SharpQuery" assembly="SharpQuery" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" compilerversion="" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Library" definesymbols="" generatexmldocumentation="False" win32Icon="" noconfig="False" nostdlib="False" />
+      <Execution commandlineparameters="" consolepause="False" />
+      <Output directory="..\..\..\..\AddIns\AddIns\Misc\SharpQuery" assembly="SharpQuery" executeScript="" executeBeforeBuild="" executeAfterBuild="" executeBeforeBuildArguments="" executeAfterBuildArguments="" />
+    </Configuration>
+  </Configurations>
+</Project>

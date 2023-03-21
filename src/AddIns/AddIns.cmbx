@@ -1,0 +1,28 @@
+<Combine fileversion="1.0" name="AddIns" description="">
+  <StartMode startupentry="" single="True">
+    <Execute entry="BackendBindings" type="None" />
+    <Execute entry="DisplayBindings" type="None" />
+    <Execute entry="Misc" type="None" />
+    <Execute entry="Wizards" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\BackendBindings\BackendBindings.cmbx" />
+    <Entry filename=".\DisplayBindings\DisplayBindings.cmbx" />
+    <Entry filename=".\Misc\Misc.cmbx" />
+    <Entry filename=".\Wizards\Wizards.cmbx" />
+  </Entries>
+  <Configurations active="Release">
+    <Configuration name="Release">
+      <Entry name="BackendBindings" configurationname="Debug" build="False" />
+      <Entry name="DisplayBindings" configurationname="Debug" build="False" />
+      <Entry name="Misc" configurationname="Debug" build="False" />
+      <Entry name="Wizards" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="BackendBindings" configurationname="Debug" build="False" />
+      <Entry name="DisplayBindings" configurationname="Debug" build="False" />
+      <Entry name="Misc" configurationname="Debug" build="False" />
+      <Entry name="Wizards" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>
