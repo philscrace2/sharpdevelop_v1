@@ -17,7 +17,7 @@ using System.Reflection;
 using System.Xml;
 
 using ICSharpCode.Core.AddIns;
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 
 namespace ICSharpCode.Core.Services
 {

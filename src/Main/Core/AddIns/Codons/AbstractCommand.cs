@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 using ICSharpCode.Core.AddIns;
 using ICSharpCode.Core.AddIns.Codons;
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 
 namespace ICSharpCode.Core.AddIns.Codons
 {

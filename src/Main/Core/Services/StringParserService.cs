@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Specialized;
 
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 
 namespace ICSharpCode.Core.Services
 {

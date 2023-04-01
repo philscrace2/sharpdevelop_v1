@@ -10,7 +10,7 @@ using System.Collections;
 using System.Reflection;
 using System.Windows.Forms;
 
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 using ICSharpCode.Core.AddIns.Conditions;
 
 namespace ICSharpCode.Core.AddIns.Codons

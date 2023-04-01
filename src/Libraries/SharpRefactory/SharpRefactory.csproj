@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40ECBC17-4369-4D66-B927-362E8AE40927}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpRefactory</RootNamespace>
+    <AssemblyName>SharpRefactory</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CodeDOM\CodeDOMVisitor.cs" />
+    <Compile Include="Lexer\Lexer.cs" />
+    <Compile Include="Lexer\Reader\FileReader.cs" />
+    <Compile Include="Lexer\Reader\IReader.cs" />
+    <Compile Include="Lexer\Reader\StringReader.cs" />
+    <Compile Include="Lexer\Specials\BlankLine.cs" />
+    <Compile Include="Lexer\Specials\Comment.cs" />
+    <Compile Include="Lexer\Specials\CommentType.cs" />
+    <Compile Include="Lexer\Specials\PreProcessingDirective.cs" />
+    <Compile Include="Lexer\Specials\SpecialTracker.cs" />
+    <Compile Include="Lexer\Specials\SpecialType.cs" />
+    <Compile Include="Lexer\Specials\TagComment.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Parser\AST\AbstractASTVisitor.cs" />
+    <Compile Include="Parser\AST\AbstractNode.cs" />
+    <Compile Include="Parser\AST\AttributeTargets.cs" />
+    <Compile Include="Parser\AST\CompilationUnit.cs" />
+    <Compile Include="Parser\AST\DebugASTVisitor.cs" />
+    <Compile Include="Parser\AST\Enums.cs" />
+    <Compile Include="Parser\AST\Expressions\ArrayCreateExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\ArrayInitializerExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\AssignmentExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\BaseReferenceExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\BinaryOperatorExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\CastExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\CheckedExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\ConditionalExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\DirectionExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\Expression.cs" />
+    <Compile Include="Parser\AST\Expressions\FieldReferenceExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\IdentifierExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\IndexerExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\InvocationExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\ObjectCreateExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\ParenthesizedExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\PointerReferenceExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\PrimitiveExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\SizeOfExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\StackAllocExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\ThisReferenceExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\TypeOfExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\TypeReferenceExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\UnaryOperatorExpression.cs" />
+    <Compile Include="Parser\AST\Expressions\UncheckedExpression.cs" />
+    <Compile Include="Parser\AST\GlobalScope\AttributeSection.cs" />
+    <Compile Include="Parser\AST\GlobalScope\DelegateDeclaration.cs" />
+    <Compile Include="Parser\AST\GlobalScope\NamespaceDeclaration.cs" />
+    <Compile Include="Parser\AST\GlobalScope\TypeDeclaration.cs" />
+    <Compile Include="Parser\AST\GlobalScope\UsingAliasDeclaration.cs" />
+    <Compile Include="Parser\AST\GlobalScope\UsingDeclaration.cs" />
+    <Compile Include="Parser\AST\IASTVisitor.cs" />
+    <Compile Include="Parser\AST\INode.cs" />
+    <Compile Include="Parser\AST\LookupTableVisitor.cs" />
+    <Compile Include="Parser\AST\Modifier.cs" />
+    <Compile Include="Parser\AST\Statements\BlockStatement.cs" />
+    <Compile Include="Parser\AST\Statements\BreakStatement.cs" />
+    <Compile Include="Parser\AST\Statements\CheckedStatement.cs" />
+    <Compile Include="Parser\AST\Statements\ContinueStatement.cs" />
+    <Compile Include="Parser\AST\Statements\DoWhileStatement.cs" />
+    <Compile Include="Parser\AST\Statements\EmptyStatement.cs" />
+    <Compile Include="Parser\AST\Statements\FixedStatement.cs" />
+    <Compile Include="Parser\AST\Statements\ForeachStatement.cs" />
+    <Compile Include="Parser\AST\Statements\ForStatement.cs" />
+    <Compile Include="Parser\AST\Statements\GotoCaseStatement.cs" />
+    <Compile Include="Parser\AST\Statements\GotoStatement.cs" />
+    <Compile Include="Parser\AST\Statements\IfElseStatement.cs" />
+    <Compile Include="Parser\AST\Statements\IfStatement.cs" />
+    <Compile Include="Parser\AST\Statements\LabelStatement.cs" />
+    <Compile Include="Parser\AST\Statements\LocalVariableDeclaration.cs" />
+    <Compile Include="Parser\AST\Statements\LockStatement.cs" />
+    <Compile Include="Parser\AST\Statements\ReturnStatement.cs" />
+    <Compile Include="Parser\AST\Statements\Statement.cs" />
+    <Compile Include="Parser\AST\Statements\StatementExpression.cs" />
+    <Compile Include="Parser\AST\Statements\SwitchStatement.cs" />
+    <Compile Include="Parser\AST\Statements\ThrowStatement.cs" />
+    <Compile Include="Parser\AST\Statements\TryCatchStatement.cs" />
+    <Compile Include="Parser\AST\Statements\UncheckedStatement.cs" />
+    <Compile Include="Parser\AST\Statements\UnsafeStatement.cs" />
+    <Compile Include="Parser\AST\Statements\UsingStatement.cs" />
+    <Compile Include="Parser\AST\Statements\WhileStatement.cs" />
+    <Compile Include="Parser\AST\TypeLevel\ConstructorDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\DestructorDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\EventAddRegion.cs" />
+    <Compile Include="Parser\AST\TypeLevel\EventDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\EventRemoveRegion.cs" />
+    <Compile Include="Parser\AST\TypeLevel\FieldDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\IndexerDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\MethodDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\OperatorDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\ParameterDeclarationExpression.cs" />
+    <Compile Include="Parser\AST\TypeLevel\PropertyDeclaration.cs" />
+    <Compile Include="Parser\AST\TypeLevel\PropertyGetRegion.cs" />
+    <Compile Include="Parser\AST\TypeLevel\PropertySetRegion.cs" />
+    <Compile Include="Parser\AST\TypeLevel\TypeReference.cs" />
+    <Compile Include="Parser\AST\TypeLevel\VariableDeclaration.cs" />
+    <Compile Include="Parser\generated\Error.cs" />
+    <Compile Include="Parser\generated\keywordlist\Keywords.cs" />
+    <Compile Include="Parser\generated\keywordlist\Tokens.cs" />
+    <Compile Include="Parser\generated\Modifiers.cs" />
+    <Compile Include="Parser\generated\Parser.cs" />
+    <Compile Include="Parser\generated\ParserUtil.cs" />
+    <Compile Include="PrettyPrinter\OutputFormatter.cs" />
+    <Compile Include="PrettyPrinter\PrettyPrintData.cs" />
+    <Compile Include="PrettyPrinter\PrettyPrintOptions.cs" />
+    <Compile Include="PrettyPrinter\PrettyPrintUtil.cs" />
+    <Compile Include="PrettyPrinter\PrettyPrintVisitor.cs" />
+    <Compile Include="PrettyPrinter\SpecialVisitor.cs" />
+    <Compile Include="VBConverter\VBNetRefactory.cs" />
+    <Compile Include="VBConverter\VBNetVisitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Parser\generated\cs.ATG" />
+    <None Include="Parser\generated\gen.bat" />
+    <None Include="Parser\generated\keywordlist\ATGTokensSection.gen" />
+    <None Include="Parser\generated\keywordlist\BuildKeywords.pl" />
+    <None Include="Parser\generated\Parser.frame" />
+    <None Include="Parser\generated\Scanner.frame" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Parser\generated\keywordlist\CSharpKeywordList.txt" />
+    <Content Include="Parser\generated\SharpCoco.exe" />
+    <Content Include="Parser\generated\trace.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

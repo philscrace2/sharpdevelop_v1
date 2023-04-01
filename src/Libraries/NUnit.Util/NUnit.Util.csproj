@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FABE7A7-6326-4EB0-B916-D5B982B9AEFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NUnit.Util</RootNamespace>
+    <AssemblyName>NUnit.Util</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AssemblyList.cs" />
+    <Compile Include="AssemblyListItem.cs" />
+    <Compile Include="AssemblyWatcher.cs" />
+    <Compile Include="CommandLineOptions.cs" />
+    <Compile Include="ConsoleOptions.cs" />
+    <Compile Include="ConsoleWriter.cs" />
+    <Compile Include="FormSettings.cs" />
+    <Compile Include="GuiOptions.cs" />
+    <Compile Include="ITestEvents.cs" />
+    <Compile Include="ITestLoader.cs" />
+    <Compile Include="NUnitGuiSettings.cs" />
+    <Compile Include="NUnitProject.cs" />
+    <Compile Include="NUnitRegistry.cs" />
+    <Compile Include="OptionSettings.cs" />
+    <Compile Include="ProjectConfig.cs" />
+    <Compile Include="ProjectConfigCollection.cs" />
+    <Compile Include="ProjectFormatException.cs" />
+    <Compile Include="ProjectPath.cs" />
+    <Compile Include="RecentFileSettings.cs" />
+    <Compile Include="RecentProjectSettings.cs" />
+    <Compile Include="RegistrySettingsStorage.cs" />
+    <Compile Include="ResultSummarizer.cs" />
+    <Compile Include="SettingsGroup.cs" />
+    <Compile Include="SettingsStorage.cs" />
+    <Compile Include="StackTraceFilter.cs" />
+    <Compile Include="SummaryVisitor.cs" />
+    <Compile Include="TestDomain.cs" />
+    <Compile Include="TestEventArgs.cs" />
+    <Compile Include="TestEventDispatcher.cs" />
+    <Compile Include="TestExceptionHandler.cs" />
+    <Compile Include="TestLoader.cs" />
+    <Compile Include="TestResultItem.cs" />
+    <Compile Include="UIHelper.cs" />
+    <Compile Include="UITestNode.cs" />
+    <Compile Include="UserSettings.cs" />
+    <Compile Include="VSProject.cs" />
+    <Compile Include="VSProjectConfig.cs" />
+    <Compile Include="VSProjectConfigCollection.cs" />
+    <Compile Include="XmlResultVisitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Transform.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NUnitFramework\NUnit.Core.csproj">
+      <Project>{a8a7e517-96f1-4da4-bb19-0e3f82568a95}</Project>
+      <Name>NUnit.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

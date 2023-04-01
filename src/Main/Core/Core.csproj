@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E31DE660-6261-4D37-88F2-0B281F3CB33F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIns\AddIn.cs" />
+    <Compile Include="AddIns\AddInCollection.cs" />
+    <Compile Include="AddIns\AddInInitializeException.cs" />
+    <Compile Include="AddIns\AddInLoadException.cs" />
+    <Compile Include="AddIns\AddInSignatureException.cs" />
+    <Compile Include="AddIns\AddInTreeFormatException.cs" />
+    <Compile Include="AddIns\AddInTreeSingleton.cs" />
+    <Compile Include="AddIns\Codons\AbstractCodon.cs" />
+    <Compile Include="AddIns\Codons\AbstractCommand.cs" />
+    <Compile Include="AddIns\Codons\ClassCodon.cs" />
+    <Compile Include="AddIns\Codons\CodonBuilder.cs" />
+    <Compile Include="AddIns\Codons\CodonFactory.cs" />
+    <Compile Include="AddIns\Codons\CodonNameAttribute.cs" />
+    <Compile Include="AddIns\Codons\CodonNotFoundException.cs" />
+    <Compile Include="AddIns\Codons\DuplicateCodonException.cs" />
+    <Compile Include="AddIns\Codons\ICodon.cs" />
+    <Compile Include="AddIns\Codons\ICommand.cs" />
+    <Compile Include="AddIns\Codons\IconCodon.cs" />
+    <Compile Include="AddIns\Conditions\AbstractCondition.cs" />
+    <Compile Include="AddIns\Conditions\CompareCondition.cs" />
+    <Compile Include="AddIns\Conditions\ComplexConditions.cs" />
+    <Compile Include="AddIns\Conditions\ConditionAttribute.cs" />
+    <Compile Include="AddIns\Conditions\ConditionBuilder.cs" />
+    <Compile Include="AddIns\Conditions\ConditionBuilderCollection.cs" />
+    <Compile Include="AddIns\Conditions\ConditionCollection.cs" />
+    <Compile Include="AddIns\Conditions\ConditionFactory.cs" />
+    <Compile Include="AddIns\Conditions\ConditionNotFoundException.cs" />
+    <Compile Include="AddIns\Conditions\ConditionWithoutRequiredAttributesException.cs" />
+    <Compile Include="AddIns\Conditions\DuplicateConditionException.cs" />
+    <Compile Include="AddIns\Conditions\ICondition.cs" />
+    <Compile Include="AddIns\DefaultAddInTree.cs" />
+    <Compile Include="AddIns\DefaultAddInTreeNode.cs" />
+    <Compile Include="AddIns\IAddInTree.cs" />
+    <Compile Include="AddIns\IAddInTreeNode.cs" />
+    <Compile Include="AddIns\PathAttribute.cs" />
+    <Compile Include="AddIns\TreePathNotFoundException.cs" />
+    <Compile Include="AddIns\TypeNotFoundException.cs" />
+    <Compile Include="AddIns\XmlMemberArraryAttribute.cs" />
+    <Compile Include="AddIns\XmlMemberAttributeAttribute.cs" />
+    <Compile Include="CoreProperties\CharacterEncodings.cs" />
+    <Compile Include="CoreProperties\DefaultProperties.cs" />
+    <Compile Include="CoreProperties\IProperties.cs" />
+    <Compile Include="CoreProperties\IXmlConvertable.cs" />
+    <Compile Include="CoreProperties\PropertyEventArgs.cs" />
+    <Compile Include="CoreProperties\PropertyFileLoadException.cs" />
+    <Compile Include="CoreProperties\UnknownPropertyNodeException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AbstractService.cs" />
+    <Compile Include="Services\FileUtilityService.cs" />
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\IResourceService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IStringTagProvider.cs" />
+    <Compile Include="Services\PropertyService.cs" />
+    <Compile Include="Services\SaveErrorChooseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\SaveErrorInformDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\ServiceManager.cs" />
+    <Compile Include="Services\StringParserService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

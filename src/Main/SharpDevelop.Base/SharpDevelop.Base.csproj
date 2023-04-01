@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB3912C5-E207-4E93-A80B-9DB8F99EF707}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpDevelop.Base</RootNamespace>
+    <AssemblyName>SharpDevelop.Base</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Genghis">
+      <HintPath>..\..\..\..\sharpdevelop_v1\src\Tools\nprof\bin\Genghis.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\sharpdevelop_v1\src\Tools\nant\bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>..\..\Libraries\RequiredAssemblies\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NDoc.Core">
+      <HintPath>..\..\..\..\sharpdevelop_v1\src\Tools\nant\bin\NDoc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NDoc.Documenter.Msdn">
+      <HintPath>..\..\..\..\sharpdevelop_v1\src\Tools\nant\bin\NDoc.Documenter.Msdn.dll</HintPath>
+    </Reference>
+    <Reference Include="NDoc.Documenter.NAnt">
+      <HintPath>..\..\..\..\sharpdevelop_v1\src\Tools\nant\bin\NDoc.Documenter.NAnt.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Commands\AutostartCommands.cs" />
+    <Compile Include="Commands\ChooseConfigurationCommand.cs" />
+    <Compile Include="Commands\ClassBrowserCommands\ClassBrowserCommands.cs" />
+    <Compile Include="Commands\CustomStringTagProvider.cs" />
+    <Compile Include="Commands\EditCommands.cs" />
+    <Compile Include="Commands\FileCommands.cs" />
+    <Compile Include="Commands\FileTabStripCommands.cs" />
+    <Compile Include="Commands\HelpCommands.cs" />
+    <Compile Include="Commands\MenuItemBuilders.cs" />
+    <Compile Include="Commands\ProjectBrowserCommands\CombineNodeCommands.cs" />
+    <Compile Include="Commands\ProjectBrowserCommands\FolderNodeCommands.cs" />
+    <Compile Include="Commands\ProjectBrowserCommands\GeneralNodeCommands.cs" />
+    <Compile Include="Commands\ProjectBrowserCommands\ProjectNodeCommands.cs" />
+    <Compile Include="Commands\ProjectBrowserCommands\ReferenceFolderNodeCommands.cs" />
+    <Compile Include="Commands\ProjectBrowserCommands\ResourceFolderNodeCommands.cs" />
+    <Compile Include="Commands\ProjectCommands.cs" />
+    <Compile Include="Commands\ProjectOptionsCommands.cs" />
+    <Compile Include="Commands\RunCommands.cs" />
+    <Compile Include="Commands\SideBarCommands.cs" />
+    <Compile Include="Commands\ToolsCommands.cs" />
+    <Compile Include="Commands\VBConverter\ConvertBuffer.cs" />
+    <Compile Include="Commands\VBConverter\ConvertProject.cs" />
+    <Compile Include="Commands\VBConverter\CSharpConvertBuffer.cs" />
+    <Compile Include="Commands\WindowCommands.cs" />
+    <Compile Include="Gui\AbstractBaseViewContent.cs" />
+    <Compile Include="Gui\AbstractPadContent.cs" />
+    <Compile Include="Gui\AbstractSecondaryViewContent.cs" />
+    <Compile Include="Gui\AbstractViewContent.cs" />
+    <Compile Include="Gui\BrowserDisplayBinding\AxSHDocVw.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\BrowserDisplayBinding\BrowserDisplayBinding.cs" />
+    <Compile Include="Gui\BrowserDisplayBinding\HTMLInterfaces.cs" />
+    <Compile Include="Gui\BrowserDisplayBinding\HtmlViewPane.cs" />
+    <Compile Include="Gui\BrowserDisplayBinding\SHDocVw.cs" />
+    <Compile Include="Gui\CompletionDatabaseWizard\ChooseLocationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\CompletionDatabaseWizard\CreateDatabasePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\CompletionDatabaseWizard\CreationFinishedPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\CompletionDatabaseWizard\SetupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\CompletionDatabaseWizard\UseExistingFilePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\CustomTypeConverter\BooleanTypeConverter.cs" />
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\CustomTypeConverter\TemplateTypeConverter.cs" />
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\LocalizedObject.cs" />
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\LocalizedProperty.cs" />
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\LocalizedPropertyAttribute.cs" />
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\LocalizedPropertyDescriptor.cs" />
+    <Compile Include="Gui\Components\LocalizedPropertyGrid\LocalizedTypeDescriptor.cs" />
+    <Compile Include="Gui\Components\SdMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\SdMenuCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\SdMenuComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\SdMenuCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\SdMenuSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\SharpMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\SideBar\AxSideBar.cs" />
+    <Compile Include="Gui\Components\SideBar\AxSideTab.cs" />
+    <Compile Include="Gui\Components\SideBar\AxSideTabItem.cs" />
+    <Compile Include="Gui\Components\SideBar\SharpDevelopSideBar.cs" />
+    <Compile Include="Gui\Components\SideBar\SharpDevelopSideTabItem.cs" />
+    <Compile Include="Gui\Components\StatusBar\AxStatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\StatusBar\AxStatusBarPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Components\StatusBar\SdStatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\ContentInterfaces\IClipboardHandler.cs" />
+    <Compile Include="Gui\ContentInterfaces\ICustomizedCommands.cs" />
+    <Compile Include="Gui\ContentInterfaces\IEditable.cs" />
+    <Compile Include="Gui\ContentInterfaces\IHelpProvider.cs" />
+    <Compile Include="Gui\ContentInterfaces\IParsableContent.cs" />
+    <Compile Include="Gui\ContentInterfaces\IParseInformationListener.cs" />
+    <Compile Include="Gui\ContentInterfaces\IPositionable.cs" />
+    <Compile Include="Gui\ContentInterfaces\IPrintable.cs" />
+    <Compile Include="Gui\ContentInterfaces\IViewContentMemento.cs" />
+    <Compile Include="Gui\Dialogs\AbstractOptionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\CombineConfiguration\CombineConfigurationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\CombineConfiguration\CombineDependencyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\CombineConfiguration\CombineStartupPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\CombineConfiguration\ConfigurationManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\CommonAboutDialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\DirtyFilesDialog.cs" />
+    <Compile Include="Gui\Dialogs\FolderDialog.cs" />
+    <Compile Include="Gui\Dialogs\FusionNative.cs" />
+    <Compile Include="Gui\Dialogs\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\NewFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\NewProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\EditTemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\ExternalToolPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\CodeGenerationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\EditStandardHeaderPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\LoadSavePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\ProjectAndCombinePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\SelectCulturePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\SelectStylePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\IDEOptions\TaskListOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\ProjectOptions\CompileFileProjectOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\ProjectOptions\DeployFileOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\ProjectOptions\GeneralProjectOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\OptionPanels\PropertyGridPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ProjectOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReferenceDialog\AddWebReferenceDialog.cs" />
+    <Compile Include="Gui\Dialogs\ReferenceDialog\AssemblyReferencePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReferenceDialog\COMReferencePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReferenceDialog\GacReferencePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReferenceDialog\ProjectReferencePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReferenceDialog\SelectReferenceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReferenceDialog\WebReference.cs" />
+    <Compile Include="Gui\Dialogs\SharpDevelopAboutPanels.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\TabbedOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\TipOfTheDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\TreeViewOptions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ViewGPLDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\Wizard\AbstractWizardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\Wizard\CurrentPanelPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\Wizard\IWizardPanel.cs" />
+    <Compile Include="Gui\Dialogs\Wizard\StatusPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\Wizard\WizardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\WordCountDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\ErrorDialogs\LoadingError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\HtmlControl\BrowserNavigateEventArgs.cs" />
+    <Compile Include="Gui\HtmlControl\HtmlControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\HtmlControl\IHTMLDocument2.cs" />
+    <Compile Include="Gui\HtmlControl\IHTMLElement.cs" />
+    <Compile Include="Gui\HtmlControl\IWebBrowser.cs" />
+    <Compile Include="Gui\HtmlControl\IWebBrowserEvents.cs" />
+    <Compile Include="Gui\IBaseViewContent.cs" />
+    <Compile Include="Gui\IMementoCapable.cs" />
+    <Compile Include="Gui\IPadContent.cs" />
+    <Compile Include="Gui\IProgressMonitor.cs" />
+    <Compile Include="Gui\ISecondaryViewContent.cs" />
+    <Compile Include="Gui\IViewContent.cs" />
+    <Compile Include="Gui\IWorkbench.cs" />
+    <Compile Include="Gui\IWorkbenchLayout.cs" />
+    <Compile Include="Gui\IWorkbenchWindow.cs" />
+    <Compile Include="Gui\PadContentCollection.cs" />
+    <Compile Include="Gui\Pads\ClassScout\BrowserNode\AbstractClassScoutNode.cs" />
+    <Compile Include="Gui\Pads\ClassScout\ClassScout.cs" />
+    <Compile Include="Gui\Pads\ClassScout\NodeBuilder\DefaultDotNetClassScoutNodeBuilder.cs" />
+    <Compile Include="Gui\Pads\ClassScout\NodeBuilder\IClassScoutNodeBuilder.cs" />
+    <Compile Include="Gui\Pads\CompilerMessageView\CompilerMessageView.cs" />
+    <Compile Include="Gui\Pads\CompilerMessageView\MessageViewCategory.cs" />
+    <Compile Include="Gui\Pads\Debugger\BreakPointsPad.cs" />
+    <Compile Include="Gui\Pads\Debugger\CallStackPad.cs" />
+    <Compile Include="Gui\Pads\Debugger\LoadedModulesPad.cs" />
+    <Compile Include="Gui\Pads\Debugger\LocalVarPad.cs" />
+    <Compile Include="Gui\Pads\Debugger\RunningThreadsPad.cs" />
+    <Compile Include="Gui\Pads\FileScout.cs" />
+    <Compile Include="Gui\Pads\HelpBrowser\HelpBrowser.cs" />
+    <Compile Include="Gui\Pads\OpenTaskView.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\AbstractBrowserNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\CombineBrowserNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\DirectoryNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\DragDropUtil.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\FileNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\FolderNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\NamedFolderNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\ProjectBrowserNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\BrowserNode\ReferenceNode.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\NodeBuilder\DefaultDotNetNodeBuilder.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\NodeBuilder\IProjectNodeBuilder.cs" />
+    <Compile Include="Gui\Pads\ProjectBrowser\ProjectBrowserView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Pads\PropertyPad\PropertyPad.cs" />
+    <Compile Include="Gui\Pads\PropertyPad\PropertyPadCommands.cs" />
+    <Compile Include="Gui\Pads\SideBarView.cs" />
+    <Compile Include="Gui\Pads\TreeViewMemento.cs" />
+    <Compile Include="Gui\ViewContentCollection.cs" />
+    <Compile Include="Gui\WorkbenchSingleton.cs" />
+    <Compile Include="Gui\WorkbenchWindowCollection.cs" />
+    <Compile Include="Gui\Workbench\DefaultWorkbench.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Workbench\Layouts\SdiWorkspaceLayout.cs" />
+    <Compile Include="Gui\Workbench\Layouts\SdiWorkspaceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Workbench\ViewContentEventHandler.cs" />
+    <Compile Include="Gui\Workbench\WorkbenchMemento.cs" />
+    <Compile Include="Gui\XmlForms\BaseSharpDevelopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\XmlForms\BaseSharpDevelopUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\XmlForms\SharpDevelopObjectCreator.cs" />
+    <Compile Include="Gui\XmlForms\SharpDevelopPropertyValueCreator.cs" />
+    <Compile Include="Gui\XmlForms\SharpDevelopStringValueFilter.cs" />
+    <Compile Include="Internal\Codons\DefaultDialogPanelDescriptor.cs" />
+    <Compile Include="Internal\Codons\DialogPanelCodon.cs" />
+    <Compile Include="Internal\Codons\DisplayBinding\DisplayBindingCodon.cs" />
+    <Compile Include="Internal\Codons\DisplayBinding\IDisplayBinding.cs" />
+    <Compile Include="Internal\Codons\DisplayBinding\ISubDisplayBinding.cs" />
+    <Compile Include="Internal\Codons\IDialogPanel.cs" />
+    <Compile Include="Internal\Codons\IDialogPanelDescriptor.cs" />
+    <Compile Include="Internal\Codons\LanguageBinding\DefaultCompilerResult.cs" />
+    <Compile Include="Internal\Codons\LanguageBinding\FileFilterCodon.cs" />
+    <Compile Include="Internal\Codons\LanguageBinding\ICompilerResult.cs" />
+    <Compile Include="Internal\Codons\LanguageBinding\ILanguageBinding.cs" />
+    <Compile Include="Internal\Codons\LanguageBinding\LanguageBindingCodon.cs" />
+    <Compile Include="Internal\Codons\MenuItems\AbstractCheckableMenuCommand.cs" />
+    <Compile Include="Internal\Codons\MenuItems\AbstractMenuCommand.cs" />
+    <Compile Include="Internal\Codons\MenuItems\ICheckableMenuCommand.cs" />
+    <Compile Include="Internal\Codons\MenuItems\IMenuCommand.cs" />
+    <Compile Include="Internal\Codons\MenuItems\ISubmenuBuilder.cs" />
+    <Compile Include="Internal\Codons\MenuItems\MenuItemCodon.cs" />
+    <Compile Include="Internal\Codons\PadCodon.cs" />
+    <Compile Include="Internal\Codons\Toolbars\AbstractComboBoxCommand.cs" />
+    <Compile Include="Internal\Codons\Toolbars\IComboBoxCommand.cs" />
+    <Compile Include="Internal\Codons\Toolbars\ToolbarItemCodon.cs" />
+    <Compile Include="Internal\CollectionUtilities\Comparers.cs" />
+    <Compile Include="Internal\CollectionUtilities\DiffUtility.cs" />
+    <Compile Include="Internal\CollectionUtilities\SortUtility.cs" />
+    <Compile Include="Internal\CollectionUtilities\SortUtilityBase.cs" />
+    <Compile Include="Internal\Conditions\ActiveContentExtension.cs" />
+    <Compile Include="Internal\Conditions\ActiveViewContentUntitled.cs" />
+    <Compile Include="Internal\Conditions\ActiveWindowStateCondition.cs" />
+    <Compile Include="Internal\Conditions\CombineOpenCondition.cs" />
+    <Compile Include="Internal\Conditions\IsProcessRunningCondition.cs" />
+    <Compile Include="Internal\Conditions\OpenWindowStateCondition.cs" />
+    <Compile Include="Internal\Conditions\OwnerStateCondition.cs" />
+    <Compile Include="Internal\Conditions\ProjectActiveCondition.cs" />
+    <Compile Include="Internal\Conditions\ProjectOpenCondition.cs" />
+    <Compile Include="Internal\Conditions\WindowActiveCondition.cs" />
+    <Compile Include="Internal\Conditions\WindowOpenCondition.cs" />
+    <Compile Include="Internal\DataStructures\PriorityQueue.cs" />
+    <Compile Include="Internal\ExternalTool\ExternalTool.cs" />
+    <Compile Include="Internal\ExternalTool\ToolLoader.cs" />
+    <Compile Include="Internal\Parser\ClassType.cs" />
+    <Compile Include="Internal\Parser\Collections\AttributeCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\AttributeSectionCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\ClassCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\CommentCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\EventCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\FieldCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\IUsingCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\MethodCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\ParameterCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\PropertyCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\TagCollection.cs" />
+    <Compile Include="Internal\Parser\Collections\TypedCSharpCollection.cs" />
+    <Compile Include="Internal\Parser\Comment.cs" />
+    <Compile Include="Internal\Parser\IAttribute.cs" />
+    <Compile Include="Internal\Parser\IClass.cs" />
+    <Compile Include="Internal\Parser\IComment.cs" />
+    <Compile Include="Internal\Parser\ICompilationUnit.cs" />
+    <Compile Include="Internal\Parser\ICompilationUnitBase.cs" />
+    <Compile Include="Internal\Parser\IDecoration.cs" />
+    <Compile Include="Internal\Parser\IEvent.cs" />
+    <Compile Include="Internal\Parser\IExpressionFinder.cs" />
+    <Compile Include="Internal\Parser\IField.cs" />
+    <Compile Include="Internal\Parser\IIndexer.cs" />
+    <Compile Include="Internal\Parser\IMember.cs" />
+    <Compile Include="Internal\Parser\IMethod.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractAttribute.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractClass.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractComment.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractCompilationUnit.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractDecoration.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractEvent.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractField.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractIndexer.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractMember.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractMethod.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractNamedEntity.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractParameter.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractProperty.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractReturnType.cs" />
+    <Compile Include="Internal\Parser\Implementations\AbstractUsing.cs" />
+    <Compile Include="Internal\Parser\Implementations\DefaultRegion.cs" />
+    <Compile Include="Internal\Parser\IParameter.cs" />
+    <Compile Include="Internal\Parser\IParser.cs" />
+    <Compile Include="Internal\Parser\IProperty.cs" />
+    <Compile Include="Internal\Parser\IRegion.cs" />
+    <Compile Include="Internal\Parser\IReturnType.cs" />
+    <Compile Include="Internal\Parser\IUsing.cs" />
+    <Compile Include="Internal\Parser\ModifierEnum.cs" />
+    <Compile Include="Internal\Parser\ParameterModifier.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentClass.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentEvent.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentField.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentIndexer.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentMethod.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentParameter.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentProperty.cs" />
+    <Compile Include="Internal\Parser\PersistenceLayer\PersistentReturnType.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionClass.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionEvent.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionField.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionIndexer.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionMethod.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionParameter.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionProperty.cs" />
+    <Compile Include="Internal\Parser\ReflectionLayer\ReflectionReturnType.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyAttribute.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyClass.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyEvent.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyField.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyIndexer.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyMethod.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyParameter.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyProperty.cs" />
+    <Compile Include="Internal\Parser\SharpAssemblyLayer\SharpAssemblyReturnType.cs" />
+    <Compile Include="Internal\Parser\Tag.cs" />
+    <Compile Include="Internal\Project\Attributes\ConvertToRelativePathAttribute.cs" />
+    <Compile Include="Internal\Project\Attributes\XmlAttributeAttribute.cs" />
+    <Compile Include="Internal\Project\Attributes\XmlNodeNameAttribute.cs" />
+    <Compile Include="Internal\Project\Attributes\XmlSetAttribute.cs" />
+    <Compile Include="Internal\Project\Combine\Combine.cs" />
+    <Compile Include="Internal\Project\Combine\CombineConfiguration.cs" />
+    <Compile Include="Internal\Project\Combine\CombineEntry.cs" />
+    <Compile Include="Internal\Project\Combine\CombineExecuteDefinition.cs" />
+    <Compile Include="Internal\Project\Combine\CyclicBuildOrderException.cs" />
+    <Compile Include="Internal\Project\Combine\NoStartupCombineDefinedException.cs" />
+    <Compile Include="Internal\Project\Project\AbstractConfiguration.cs" />
+    <Compile Include="Internal\Project\Project\AbstractProject.cs" />
+    <Compile Include="Internal\Project\Project\AbstractProjectConfiguration.cs" />
+    <Compile Include="Internal\Project\Project\Collections\ConfigurationCollection.cs" />
+    <Compile Include="Internal\Project\Project\Collections\ProjectFileCollection.cs" />
+    <Compile Include="Internal\Project\Project\Collections\ProjectReferenceCollection.cs" />
+    <Compile Include="Internal\Project\Project\ConvertXml.cs" />
+    <Compile Include="Internal\Project\Project\Deployment\AssemblyDeploy.cs" />
+    <Compile Include="Internal\Project\Project\Deployment\DeployInformation.cs" />
+    <Compile Include="Internal\Project\Project\Deployment\FileDeploy.cs" />
+    <Compile Include="Internal\Project\Project\Deployment\IDeploymentStrategy.cs" />
+    <Compile Include="Internal\Project\Project\Deployment\ScriptDeploy.cs" />
+    <Compile Include="Internal\Project\Project\IConfiguration.cs" />
+    <Compile Include="Internal\Project\Project\IncludeFilesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\Project\Project\IProject.cs" />
+    <Compile Include="Internal\Project\Project\ProjectFile.cs" />
+    <Compile Include="Internal\Project\Project\ProjectReference.cs" />
+    <Compile Include="Internal\Project\Project\TypelibImporter.cs" />
+    <Compile Include="Internal\Project\Project\UnknownProjectVersionException.cs" />
+    <Compile Include="Internal\Templates\CodeTemplate.cs" />
+    <Compile Include="Internal\Templates\CodeTemplateGroup.cs" />
+    <Compile Include="Internal\Templates\CodeTemplateLoader.cs" />
+    <Compile Include="Internal\Templates\FileDescriptionTemplate.cs" />
+    <Compile Include="Internal\Templates\FileTemplate.cs" />
+    <Compile Include="Internal\Templates\INewFileCreator.cs" />
+    <Compile Include="Internal\Templates\ProjectTemplates\CombineDescriptor.cs" />
+    <Compile Include="Internal\Templates\ProjectTemplates\ProjectCreateInformation.cs" />
+    <Compile Include="Internal\Templates\ProjectTemplates\ProjectDescriptor.cs" />
+    <Compile Include="Internal\Templates\ProjectTemplates\ProjectTemplate.cs" />
+    <Compile Include="Internal\Templates\ScriptRunner.cs" />
+    <Compile Include="Internal\Templates\StandardHeaders.cs" />
+    <Compile Include="Internal\Templates\TextTemplate.cs" />
+    <Compile Include="Internal\Undo\IUndoableOperation.cs" />
+    <Compile Include="Internal\Undo\UndoQueue.cs" />
+    <Compile Include="Internal\Undo\UndoStack.cs" />
+    <Compile Include="Services\AmbienceService\AbstractAmbience.cs" />
+    <Compile Include="Services\AmbienceService\AmbienceReflectionDecorator.cs" />
+    <Compile Include="Services\AmbienceService\AmbienceService.cs" />
+    <Compile Include="Services\AmbienceService\CodeDOMGeneratorUtility.cs" />
+    <Compile Include="Services\AmbienceService\IAmbience.cs" />
+    <Compile Include="Services\AmbienceService\NetAmbience.cs" />
+    <Compile Include="Services\ClassBrowserIcons\ClassBrowserIconsService.cs" />
+    <Compile Include="Services\Debugger\BreakEventHandler.cs" />
+    <Compile Include="Services\Debugger\DebugClasses.cs" />
+    <Compile Include="Services\Debugger\DebuggerService.cs" />
+    <Compile Include="Services\Debugger\DefaultDebugger.cs" />
+    <Compile Include="Services\Debugger\IDebugger.cs" />
+    <Compile Include="Services\DisplayBinding\DisplayBindingService.cs" />
+    <Compile Include="Services\File\DefaultFileService.cs" />
+    <Compile Include="Services\File\FileEventArgs.cs" />
+    <Compile Include="Services\File\IFileService.cs" />
+    <Compile Include="Services\File\RecentOpen.cs" />
+    <Compile Include="Services\File\RingBuffer.cs" />
+    <Compile Include="Services\IconService.cs" />
+    <Compile Include="Services\LanguageBinding\LanguageBindingService.cs" />
+    <Compile Include="Services\Language\Language.cs" />
+    <Compile Include="Services\Language\LanguageService.cs" />
+    <Compile Include="Services\MenuService\MenuService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\ParserService\AssemblyInformation.cs" />
+    <Compile Include="Services\ParserService\ClassProxy.cs" />
+    <Compile Include="Services\ParserService\ClassProxyCollection.cs" />
+    <Compile Include="Services\ParserService\DefaultParserService.cs" />
+    <Compile Include="Services\ParserService\IParserService.cs" />
+    <Compile Include="Services\ParserService\ParseInformation.cs" />
+    <Compile Include="Services\ParserService\Position.cs" />
+    <Compile Include="Services\Project\CombineEventArgs.cs" />
+    <Compile Include="Services\Project\ConfigurationEventHandler.cs" />
+    <Compile Include="Services\Project\DefaultProjectService.cs" />
+    <Compile Include="Services\Project\IProjectService.cs" />
+    <Compile Include="Services\Project\ParseInformationEventHandler.cs" />
+    <Compile Include="Services\Project\ProjectEventArgs.cs" />
+    <Compile Include="Services\Project\ProjectRenameEventArgs.cs" />
+    <Compile Include="Services\ResourceNotFoundException.cs" />
+    <Compile Include="Services\ResourceService.cs" />
+    <Compile Include="Services\StatusBar\DefaultStatusBarService.cs" />
+    <Compile Include="Services\StatusBar\IStatusBarService.cs" />
+    <Compile Include="Services\Tasks\Task.cs" />
+    <Compile Include="Services\Tasks\TaskService.cs" />
+    <Compile Include="Services\Toolbar\ToolbarService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\CommandBar\CommandBar\CommandBar.csproj">
+      <Project>{6109225b-b406-40ef-ab38-76286423d944}</Project>
+      <Name>CommandBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ICSharpCode.XmlForms\ICSharpCode.XmlForms.csproj">
+      <Project>{1e45a3a7-e223-4f7b-aa6f-efd82326cc1f}</Project>
+      <Name>ICSharpCode.XmlForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\SharpAssembly\SharpAssembly.csproj">
+      <Project>{f8fa6d57-b520-492b-b64e-87ff3364456a}</Project>
+      <Name>SharpAssembly</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\SharpRefactoryVB\SharpRefactoryVB.csproj">
+      <Project>{18eafc96-b42f-4ede-9ac7-2b0cb90830c6}</Project>
+      <Name>SharpRefactoryVB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\SharpRefactory\SharpRefactory.csproj">
+      <Project>{40ecbc17-4369-4d66-b927-362e8ae40927}</Project>
+      <Name>SharpRefactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\WinFormsUI\WinFormsUI.csproj">
+      <Project>{977f5bd4-ed9b-4aa1-abaf-612d76d443ff}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{e31de660-6261-4d37-88f2-0b281f3cb33f}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

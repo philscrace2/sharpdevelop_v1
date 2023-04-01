@@ -18,7 +18,7 @@ using System.Text;
 
 using System.Windows.Forms;
 
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 using ICSharpCode.Core.Services;
 
 using ICSharpCode.Core.AddIns.Conditions;

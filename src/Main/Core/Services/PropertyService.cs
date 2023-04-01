@@ -12,7 +12,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Reflection;
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 
 namespace ICSharpCode.Core.Services
 { 

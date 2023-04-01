@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{977F5BD4-ED9B-4AA1-ABAF-612D76D443FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinFormsUI</RootNamespace>
+    <AssemblyName>WinFormsUI</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinFormsUI\AutoHideWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\AutoHideWindowSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DisplayingDockList.cs" />
+    <Compile Include="WinFormsUI\DockAreasEditor.cs" />
+    <Compile Include="WinFormsUI\DockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DockContentCollection.cs" />
+    <Compile Include="WinFormsUI\DockHelper.cs" />
+    <Compile Include="WinFormsUI\DockList.cs" />
+    <Compile Include="WinFormsUI\DockPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DockPaneCollection.cs" />
+    <Compile Include="WinFormsUI\DockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DockPanelPersist.cs" />
+    <Compile Include="WinFormsUI\DockPaneSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DockWindowCollection.cs" />
+    <Compile Include="WinFormsUI\DockWindowSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\DragHandler.cs" />
+    <Compile Include="WinFormsUI\DragHandlerBase.cs" />
+    <Compile Include="WinFormsUI\DrawHelper.cs" />
+    <Compile Include="WinFormsUI\DummyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\Enums.cs" />
+    <Compile Include="WinFormsUI\EventArgs.cs" />
+    <Compile Include="WinFormsUI\FloatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\FloatWindowCollection.cs" />
+    <Compile Include="WinFormsUI\HiddenMdiChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\InertButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\Interfaces.cs" />
+    <Compile Include="WinFormsUI\Localization.cs" />
+    <Compile Include="WinFormsUI\LocalWindowsHook.cs" />
+    <Compile Include="WinFormsUI\Measures.cs" />
+    <Compile Include="WinFormsUI\NestedDockingStatus.cs" />
+    <Compile Include="WinFormsUI\ResourceHelper.cs" />
+    <Compile Include="WinFormsUI\SplitterBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinFormsUI\Win32\Enums.cs" />
+    <Compile Include="WinFormsUI\Win32\Gdi32.cs" />
+    <Compile Include="WinFormsUI\Win32\Structs.cs" />
+    <Compile Include="WinFormsUI\Win32\User32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WinFormsUI\WinFormsUI.prjx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.DockPaneSplitter.resources" />
+    <EmbeddedResource Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.FloatWindow.resources" />
+    <EmbeddedResource Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.InertButton.resources" />
+    <EmbeddedResource Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Strings.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.AutoHideNo.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.AutoHideYes.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.DocumentCloseDisabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.DocumentCloseEnabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.ScrollLeftDisabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.ScrollLeftEnabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.ScrollRightDisabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.ScrollRightEnabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.ToolWindowCloseDisabled.bmp" />
+    <Content Include="WinFormsUI\Resources\WeifenLuo.WinFormsUI.Resources.DockPane.ToolWindowCloseEnabled.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

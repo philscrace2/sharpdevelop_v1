@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2552034E-384F-44E7-9CA8-BC8F34661637}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpDevelop.DefaultTexteditor</RootNamespace>
+    <AssemblyName>SharpDevelop.DefaultTexteditor</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Codons\EditActionCodon.cs" />
+    <Compile Include="Commands\BookmarkCommands.cs" />
+    <Compile Include="Commands\CodeGenerators\AbstractClassImplementorCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\AbstractFieldCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\AbstractPropertyCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\CodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\ConstructorCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\EqualsCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\GetterAndSetterCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\GetterCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\InterfaceImplementorCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\OnXXXMethodsCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\OverrideMethodsCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\SetterCodeGenerator.cs" />
+    <Compile Include="Commands\CodeGenerators\ToStringCodeGenerator.cs" />
+    <Compile Include="Commands\CommentRegionCommand.cs" />
+    <Compile Include="Commands\FoldingCommands.cs" />
+    <Compile Include="Commands\FormatCommands.cs" />
+    <Compile Include="Commands\GenerateCodeCommand.cs" />
+    <Compile Include="Commands\ProjectCommands.cs" />
+    <Compile Include="Commands\SearchCommands.cs" />
+    <Compile Include="Commands\TextAreaContextmenuCommands.cs" />
+    <Compile Include="Commands\ToolCommands.cs" />
+    <Compile Include="Conditions\TextContentCondition.cs" />
+    <Compile Include="Gui\Dialogs\ExportProjectToHtmlDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\GotoLineNumberDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReplaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\ReplaceInFilesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Dialogs\SortOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Editor\CompletionWindow\CodeCompletionData.cs" />
+    <Compile Include="Gui\Editor\CompletionWindow\CodeCompletionDataProvider.cs" />
+    <Compile Include="Gui\Editor\CompletionWindow\CommentCompletionDataProvider.cs" />
+    <Compile Include="Gui\Editor\CompletionWindow\HtmlDeclarationViewWindow.cs" />
+    <Compile Include="Gui\Editor\CompletionWindow\TemplateCompletionDataProvider.cs" />
+    <Compile Include="Gui\Editor\ErrorDrawer.cs" />
+    <Compile Include="Gui\Editor\InsightWindow\IndexerInsightDataProvider.cs" />
+    <Compile Include="Gui\Editor\InsightWindow\MethodInsightDataProvider.cs" />
+    <Compile Include="Gui\Editor\ITextAreaControlProvider.cs" />
+    <Compile Include="Gui\Editor\ParserFoldingStrategy.cs" />
+    <Compile Include="Gui\Editor\QuickClassBrowserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Editor\SharpDevelopTextAreaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\Editor\SharpDevelopTextEditorProperties.cs" />
+    <Compile Include="Gui\Editor\TextEditorDisplayBinding.cs" />
+    <Compile Include="Gui\OptionPanels\BehaviorTextEditorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\OptionPanels\CodeTemplatePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\OptionPanels\GeneralTextEditorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\OptionPanels\MarkersTextEditorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search\DefaultFind.cs" />
+    <Compile Include="Search\DocumentIterator\AllOpenDocumentIterator.cs" />
+    <Compile Include="Search\DocumentIterator\CurrentDocumentIterator.cs" />
+    <Compile Include="Search\DocumentIterator\DirectoryDocumentIterator.cs" />
+    <Compile Include="Search\DocumentIterator\IDocumentIterator.cs" />
+    <Compile Include="Search\DocumentIterator\ProvidedDocumentInformation.cs" />
+    <Compile Include="Search\DocumentIterator\ReverseDocumentIterator.cs" />
+    <Compile Include="Search\DocumentIterator\WholeProjectDocumentIterator.cs" />
+    <Compile Include="Search\IFind.cs" />
+    <Compile Include="Search\SearchOptions.cs" />
+    <Compile Include="Search\SearchReplaceInFilesManager.cs" />
+    <Compile Include="Search\SearchReplaceManager.cs" />
+    <Compile Include="Search\SearchReplaceUtilities.cs" />
+    <Compile Include="Search\SearchResult\DefaultSearchResult.cs" />
+    <Compile Include="Search\SearchResult\ISearchResult.cs" />
+    <Compile Include="Search\SearchStrategy\BruteForceSearchStrategy.cs" />
+    <Compile Include="Search\SearchStrategy\ISearchStrategy.cs" />
+    <Compile Include="Search\SearchStrategy\KMPSearchStrategy.cs" />
+    <Compile Include="Search\SearchStrategy\RegExSearchStrategy.cs" />
+    <Compile Include="Search\SearchStrategy\WildcardSearchStrategy.cs" />
+    <Compile Include="Search\TextIterator\ForwardTextIterator.cs" />
+    <Compile Include="Search\TextIterator\ForwardTextIteratorBuilder.cs" />
+    <Compile Include="Search\TextIterator\ITextIterator.cs" />
+    <Compile Include="Search\TextIterator\ITextIteratorBuilder.cs" />
+    <Compile Include="XmlFormattingStrategy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\ICSharpCode.SharpDevelop.DefaultEditor.Commands.GenerateCodeAction.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Gui\OptionPanels\GeneralTextEditorPanel.cs.orig" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\CommandBar\CommandBar\CommandBar.csproj">
+      <Project>{6109225b-b406-40ef-ab38-76286423d944}</Project>
+      <Name>CommandBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{9b70b99b-6db2-41e3-af5a-fc5329b60979}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ICSharpCode.XmlForms\ICSharpCode.XmlForms.csproj">
+      <Project>{1e45a3a7-e223-4f7b-aa6f-efd82326cc1f}</Project>
+      <Name>ICSharpCode.XmlForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Main\Core\Core.csproj">
+      <Project>{e31de660-6261-4d37-88f2-0b281f3cb33f}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Main\Main\Main.csproj">
+      <Project>{99820dd2-6dd7-4fe1-9a78-2d4f032cdb52}</Project>
+      <Name>Main</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

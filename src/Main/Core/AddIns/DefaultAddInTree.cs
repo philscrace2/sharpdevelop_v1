@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Xml;
 
 using ICSharpCode.Core.Services;
-using ICSharpCode.Core.Properties;
+using ICSharpCode.Core.CoreProperties;
 using ICSharpCode.Core.AddIns.Conditions;
 using ICSharpCode.Core.AddIns.Codons;
 
