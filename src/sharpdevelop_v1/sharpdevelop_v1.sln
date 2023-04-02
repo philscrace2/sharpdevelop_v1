@@ -33,6 +33,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDevelop.Base", "..\Mai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDevelop.DefaultTexteditor", "SharpDevelop.DefaultTexteditor\SharpDevelop.DefaultTexteditor.csproj", "{2552034E-384F-44E7-9CA8-BC8F34661637}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Addins", "Addins", "{92661B95-B9DF-4133-8CDD-F3ABA4C0D3E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CPPNetBinding", "CPPNetBinding", "{76820520-6F28-4180-B892-E310EDB56BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPPNetBinding", "..\AddIns\BackendBindings\CPPNetBinding\CPPNetBinding.csproj", "{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,8 +105,16 @@ Global
 		{2552034E-384F-44E7-9CA8-BC8F34661637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2552034E-384F-44E7-9CA8-BC8F34661637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2552034E-384F-44E7-9CA8-BC8F34661637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76820520-6F28-4180-B892-E310EDB56BBF} = {92661B95-B9DF-4133-8CDD-F3ABA4C0D3E1}
+		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4} = {76820520-6F28-4180-B892-E310EDB56BBF}
 	EndGlobalSection
 EndGlobal

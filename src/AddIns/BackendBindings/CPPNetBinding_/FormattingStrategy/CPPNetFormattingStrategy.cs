@@ -13,7 +13,7 @@ using System.Text;
 
 using ICSharpCode.TextEditor;
 using ICSharpCode.TextEditor.Document;
-using ICSharpCode.Core.CoreProperties;
+using ICSharpCode.Core.Properties;
 using ICSharpCode.Core.Services;
 using ICSharpCode.SharpDevelop.Services;
 

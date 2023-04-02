@@ -14,7 +14,7 @@ using ICSharpCode.SharpDevelop.Internal.Project;
 using ICSharpCode.SharpDevelop.Internal.ExternalTool;
 using ICSharpCode.SharpDevelop.Gui.Dialogs;
 using ICSharpCode.Core.Services;
-using ICSharpCode.Core.CoreProperties;
+using ICSharpCode.Core.Properties;
 using ICSharpCode.Core.AddIns.Codons;
 
 namespace CPPBinding

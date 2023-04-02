@@ -1,0 +1,324 @@
+<AddIn name        = "SharpDevelop Bindings"
+       author      = "Mike Krueger"
+       copyright   = "GPL"
+       url         = "http://www.icsharpcode.net"
+       description = "NCvs core module"
+       version     = "1.0.0">
+	
+	<Runtime>
+		<Import assembly = "CPPNetBinding.dll"/>
+		<Import assembly = "CSharpBinding.dll"/>
+		<Import assembly = "JavaBinding.dll"/>
+		<Import assembly = "VBNetBinding.dll"/>
+		<Import assembly = "WixBinding.dll"/>
+		<Import assembly = "ILAsmBinding.dll"/>
+	</Runtime>
+
+	<Extension path = "/SharpDevelop/Workbench/Ambiences">
+		<Class id    = "CSharp"
+		       class = "ICSharpCode.SharpDevelop.Services.CSharpAmbience"/>
+		<Class id    = "VBNET"
+		       class = "ICSharpCode.SharpDevelop.Services.VBAmbience"/>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Workbench/FileFilter">
+		<FileFilter id = "CSharp"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.CSharpFiles}"
+		            extensions = "*.cs"/>
+		<FileFilter id = "VBNET"
+		            insertafter="CSharp"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.VBNetFiles}"
+		            extensions = "*.vb"/>
+<!--		<FileFilter id = "JScript"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.JScriptFiles}"
+		            extensions = "*.js"/> -->
+		<FileFilter id = "C++"
+		            insertafter="VBNET"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.CPPFiles}"
+		            extensions = "*.cpp,*.c,*.hpp,*.h"/>
+		<FileFilter id = "Java"
+		            insertafter="C++"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.JavaFiles}"
+		            extensions = "*.java"/>
+			    
+		<FileFilter id = "Html"
+		            insertafter="Java"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.WebFiles}"
+		            extensions = "*.htm,*.html,*.aspx,*.ascx,*.asp"/>
+			    
+		<FileFilter id = "Xml"
+		            insertafter="Html"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.XmlFiles}"
+		            extensions = "*.xml"/>
+		<FileFilter id = "Resources"
+		            insertafter="Xml"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.ResourceFiles}"
+		            extensions = "*.resources,*.resx"/>
+		<FileFilter id = "SharpDevelop templates"
+		            insertafter="Resources"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.SharpDevelopTemplates}"
+		            extensions = "*.xft,*.xpt"/>
+		<FileFilter id = "SharpDevelop XFrms"
+		            insertafter="SharpDevelop templates"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.XmlForms}"
+		            extensions = "*.xfrm"/>
+		<FileFilter id = "Wix"
+		            insertafter="SharpDevelop XFrms"
+		            insertbefore="AllFiles"
+		            name = "Wix Files (*.wxs)"
+		            extensions = "*.wxs"/>
+		<FileFilter id = "ILASM"
+		            insertafter="SharpDevelop XFrms"
+		            insertbefore="AllFiles"
+		            name = "IL Files (*.il)"
+		            extensions = "*.il"/>
+		<FileFilter id = "Assemblies"
+		            insertafter="Wix"
+		            insertbefore="AllFiles"
+		            name = "${res:SharpDevelop.FileFilter.AssemblyFiles}"
+		            extensions = "*.exe,*.dll"/>
+				            
+	</Extension>
+
+	<Extension path = "/Workspace/Parser">
+		<Class id    = "CSharpParser" 
+		       class = "CSharpBinding.Parser.TParser"/>
+		<Class id    = "VBNetParser" 
+		       class = "VBBinding.Parser.TParser"/>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Workbench/MainMenu/Project">
+		<Conditional activeproject="VBNET">
+			<MenuItem id = "VB.DOC" 
+					  label = "${res:XML.MainMenu.ProjectMenu.RunVBDOC}" 
+					  description = "${res:XML.MainMenu.ProjectMenu.RunVBDOC.Description}" 
+					  class = "VBBinding.VBDOCCommand"/>
+		</Conditional>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Workbench/ProjectOptions/ConfigurationProperties">
+		<Conditional activeproject="C#">
+			<DialogPanel id = "CSharpCodeGenerationPanel"
+			             label = "${res:Dialog.Options.PrjOptions.CodeGenerationPanel.PanelName}"
+			             class = "CSharpBinding.CodeGenerationPanel"/>
+			<DialogPanel id = "CSharpOutputOptionsPanel"
+			             label = "${res:Dialog.Options.PrjOptions.OutputOptionsPanel.PanelName}"
+			             class = "CSharpBinding.OutputOptionsPanel"/>
+			<DialogPanel id = "CSharpRuntimeCompilerPanel"
+			             label = "Runtime/Compiler"
+			             class = "CSharpBinding.ChooseRuntimePanel"/>
+		</Conditional>
+		<Conditional activeproject="C++.NET">
+			<DialogPanel id = "CPPCodeGenerationPanel"
+			             label = "Code Generation"
+			             class = "CPPBinding.CPPCodeGenerationPanel"/>
+			<!-- C++ compiler Options -->
+			<DialogPanel id = "GeneralCPPOptionsPanel"
+			             label = "General C++ Compiler Options"
+			             class = "CPPBinding.GeneralCPPOptionsPanel"/>
+			<DialogPanel id = "OptimizeCPPOptionsPanel"
+			             label = "Optimize C++ Compiler Options"
+			             class = "CPPBinding.OptimizeCPPOptionsPanel"/>
+			<DialogPanel id = "PreProcessorCPPOptionsPanel"
+			             label = "PreProcessor C++ Compiler Options"
+			             class = "CPPBinding.PreProcessorCPPOptionsPanel"/>
+			<DialogPanel id = "CodeGenerationCPPOptionsPanel"
+			             label = "Code Generation C++ Compiler Options"
+			             class = "CPPBinding.CodeGenerationCPPOptionsPanel"/>
+			<DialogPanel id = "LanguageCPPOptionsPanel"
+			             label = "Language C++ Compiler Options"
+			             class = "CPPBinding.LanguageCPPOptionsPanel"/>
+			<DialogPanel id = "PreCompiledHeaderCPPOptionsPanel"
+			             label = "PreCompiledHeaders C++ Compiler Options"
+			             class = "CPPBinding.PreCompiledHeaderCPPOptionsPanel"/>
+			<DialogPanel id = "OutputFileCPPOptionsPanel"
+			             label = "Output C++ Compiler Options"
+			             class = "CPPBinding.OutputFileCPPOptionsPanel"/>
+			<DialogPanel id = "InformationSearchCPPOptionsPanel"
+			             label = "InformationSearch C++ Compiler Options"
+			             class = "CPPBinding.InformationSearchCPPOptionsPanel"/>
+			<DialogPanel id = "ExtendedCPPOptionsPanel"
+			             label = "Extended C++ Compiler Options"
+			             class = "CPPBinding.ExtendedCPPOptionsPanel"/>
+			<!-- C++ linker Options -->
+			<DialogPanel id = "GeneralLinkerOptionsPanel"
+			             label = "General C++ Linker Options"
+			             class = "CPPBinding.GeneralLinkerOptionsPanel"/>
+			<DialogPanel id = "InputLinkerOptionsPanel"
+			             label = "Input C++ Linker Options"
+			             class = "CPPBinding.InputLinkerOptionsPanel"/>
+			<DialogPanel id = "DebugLinkerOptionsPanel"
+			             label = "Debug C++ Linker Options"
+			             class = "CPPBinding.DebugLinkerOptionsPanel"/>
+			<DialogPanel id = "SystemLinkerOptionsPanel"
+			             label = "System C++ Linker Options"
+			             class = "CPPBinding.SystemLinkerOptionsPanel"/>
+		</Conditional>
+		<Conditional activeproject="VBNET">
+			<DialogPanel id = "VBCodeGenerationPanel"
+			             label = "${res:Dialog.Options.PrjOptions.CodeGenerationPanel.PanelName}"
+			             class = "VBBinding.CodeGenerationPanel"/>
+			<DialogPanel id = "VBOutputOptionsPanel"
+			             label = "${res:Dialog.Options.PrjOptions.OutputOptionsPanel.PanelName}"
+			             class = "VBBinding.OutputOptionsPanel"/>
+			<DialogPanel id = "VBRuntimeCompilerPanel"
+			             label = "Compiler"
+			             class = "VBBinding.VBCompilerPanel"/>
+			<DialogPanel id = "VBDOCConfigurationPanel"
+			             label = "VB.DOC"
+			             class = "VBBinding.VBDOCConfigurationPanel"/>
+		</Conditional>
+		
+<!--		<Conditional activeproject="JScript">
+			<DialogPanel id = "JScriptProjectPanel"
+			             label = "${res:Dialog.Options.PrjOptions.CodeGenerationPanel.PanelName}"
+			             class = "JScriptBinding.ProjectConfigurationPropertyPanel"/>
+	
+		</Conditional> -->
+		<Conditional activeproject="Java">
+			<DialogPanel id = "JavaProjectPanel"
+			             label = "${res:Dialog.Options.PrjOptions.CodeGenerationPanel.PanelName}"
+			             class = "JavaBinding.ProjectConfigurationPropertyPanel"/>
+	
+		</Conditional>
+		<Conditional activeproject="WIX">
+			<DialogPanel id = "WixCompilerParametersPanel"
+			             label = "Compiler"
+			             class = "ICSharpCode.WixBinding.CompilerParametersPanel"/>
+			<DialogPanel id = "WixLinkerParametersPanel"
+			             label = "Linker"
+			             class = "ICSharpCode.WixBinding.LinkerParametersPanel"/>
+		</Conditional>
+		<Conditional activeproject="ILAsm">
+			<DialogPanel id = "ILAsmCompilerParametersPanel"
+			             label = "Compiler"
+			             class = "ICSharpCode.ILAsmBinding.CompilerParametersPanel"/>
+			<DialogPanel id = "ILAsmRuntimeCompilerPanel"
+			             label = "Runtime/Compiler"
+			             class = "ICSharpCode.ILAsmBinding.ChooseRuntimePanel"/>
+		</Conditional>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Dialogs/OptionsDialog/TextEditorOptions">
+		<DialogPanel id = "VBSpecificOptions"
+		             label = "${res:Dialog.Options.IDEOptions.TextEditor.VB.PanelName}"
+			     	 insertafter = "Behavior"
+		             class = "VBBinding.TextEditorOptionsPanel"/>
+	</Extension>
+		
+	<Extension path = "/AddIns/DefaultTextEditor/Formater">
+		<Conditional textcontent = "C#">
+			<Class id ="CSharpFormatter" insertbefore="DefaultFormatter" class = "CSharpBinding.FormattingStrategy.CSharpFormattingStrategy"/>
+		</Conditional>
+		<Conditional textcontent = "C++.NET">
+			<Class id ="CPPFormatter" insertbefore="DefaultFormatter" class = "CSharpBinding.FormattingStrategy.CSharpFormattingStrategy"/>
+		</Conditional>
+		<Conditional textcontent = "VBNET">
+			<Class id ="VBNetFormatter" insertbefore="DefaultFormatter" class ="VBBinding.FormattingStrategy.VBFormattingStrategy"/>
+		</Conditional>
+		<Conditional textcontent = "Java">
+			<Class id ="JavaFormatter" insertbefore="DefaultFormatter" class = "JavaBinding.FormattingStrategy.JavaFormattingStrategy"/>
+		</Conditional>
+	</Extension>
+	
+	<Extension path = "/Workspace/Icons">
+		<!-- C# -->
+		<Icon id         = "C#Prj"
+		      language   = "C#"
+		      resource   = "C#.ProjectIcon"/>
+
+		<Icon id         = "C#File"
+		      extensions = ".cs"
+		      resource   = "C#.FileIcon"/>
+		
+		<!-- VB.NET -->
+		<Icon id         = "VBPrj"
+		      language   = "VBNET"
+		      resource   = "VB.ProjectIcon"/>
+		<Icon id         = "VBFile"
+		      extensions = ".vb"
+		      resource   = "VB.FileIcon"/>
+
+		<!-- Java -->
+                <Icon id         = "JavaPrj"
+		      language   = "Java"
+		      resource   = "Java.ProjectIcon"/>
+                <Icon id         = "JavaFile"
+		      extensions = ".java"
+		      resource   = "Java.FileIcon"/>
+		      
+		<!-- Java Script -->
+                <Icon id         = "JScriptPrj"
+		      language   = "JScript"
+		      resource   = "JScript.ProjectIcon"/>
+                <Icon id         = "JScriptFile"
+		      extensions = ".js"
+		      resource   = "JScript.FileIcon"/>
+		
+		<!-- C++ -->
+                <Icon id         = "C++Project"
+		      language   = "C++.NET"
+		      resource   = "C++.ProjectIcon"/>
+                <Icon id         = "C++File"
+		      extensions = ".cpp"
+		      resource   = "C++.FileIcon"/>
+		
+		<!-- Resources -->
+		<Icon id         = "ResourceFileIcon"
+		      extensions = ".resources,.resx"
+		      resource   = "Icons.16x16.ResourceFileIcon" />
+		
+		<!-- XML -->
+		<Icon id         = "XmlFileIcon"
+		      extensions = ".xml"
+		      resource   = "FileIcons.XmlIcon" />
+		
+		<!-- TextFiles -->
+		<Icon id         = "TextFileIcon"
+		      extensions = ".txt,.doc"
+		      resource   = "Icons.16x16.TextFileIcon"/>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Workbench/LanguageBindings">
+		<LanguageBinding id    = "CSharp"
+		                 supportedextensions = ".cs"
+		                 class = "CSharpBinding.CSharpLanguageBinding" />
+		<LanguageBinding id    = "C++.NET"
+		                 supportedextensions = ".cpp"
+		                 class = "CPPBinding.CPPLanguageBinding" />
+		<LanguageBinding id    = "C++"
+		                 supportedextensions = ".cpp"
+		                 class = "CPPBinding.CPPLanguageBinding" />
+		<LanguageBinding id    = "VBNET"
+		                 supportedextensions = ".vb"
+		                 class = "VBBinding.VBLanguageBinding" />
+		<LanguageBinding id    = "Java"
+		                 supportedextensions = ".java"
+		                 class = "JavaBinding.JavaLanguageBinding" />
+<!--		<LanguageBinding id    = "JScript"
+		                 supportedextensions = ".js"
+		                 class = "JScriptBinding.JScriptLanguageBinding" /> -->
+		<LanguageBinding id    = "Wix"
+		                 supportedextensions = ".wxs"
+		                 class = "ICSharpCode.WixBinding.WixLanguageBinding" />
+		<LanguageBinding id    = "ILAsm"
+		                 supportedextensions = ".il"
+		                 class = "ICSharpCode.ILAsmBinding.ILAsmLanguageBinding" />
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Views/ProjectBrowser/NodeBuilders">
+		<Class id = "JavaNodeBuilder"
+		       insertbefore = "DefaultBuilder"
+		       class = "JavaBinding.JavaNodeBuilder"/>
+	</Extension>
+</AddIn>

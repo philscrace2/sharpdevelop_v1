@@ -155,8 +155,8 @@ namespace ICSharpCode.SharpDevelop.Gui
 			fileService.FileRemoved += new FileEventHandler(fileService.RecentOpen.FileRemoved);
 			fileService.FileRenamed += new FileEventHandler(fileService.RecentOpen.FileRenamed);
 			
-//			TopMenu.Selected   += new CommandHandler(OnTopMenuSelected);
-//			TopMenu.Deselected += new CommandHandler(OnTopMenuDeselected);
+            //TopMenu.Selected   += new CommandHandler(OnTopMenuSelected);
+            //TopMenu.Deselected += new CommandHandler(OnTopMenuDeselected);
 			CreateMainMenu();
 			CreateToolBars();
 		}
@@ -372,20 +372,20 @@ namespace ICSharpCode.SharpDevelop.Gui
 				}
 			}
 		}
-		
-//		protected void OnTopMenuSelected(MenuCommand mc)
-//		{
-//			IStatusBarService statusBarService = (IStatusBarService)ICSharpCode.Core.Services.ServiceManager.Services.GetService(typeof(IStatusBarService));
-//			
-//			statusBarService.SetMessage(mc.Description);
-//		}
-//		
-//		protected void OnTopMenuDeselected(MenuCommand mc)
-//		{
-//			SetStandardStatusBar(null, null);
-//		}
-		
-		protected override void OnClosing(CancelEventArgs e)
+
+        //protected void OnTopMenuSelected(MenuCommand mc)
+        //{
+        //    IStatusBarService statusBarService = (IStatusBarService)ICSharpCode.Core.Services.ServiceManager.Services.GetService(typeof(IStatusBarService));
+
+        //    statusBarService.SetMessage(mc.Description);
+        //}
+
+        //protected void OnTopMenuDeselected(MenuCommand mc)
+        //{
+        //    SetStandardStatusBar(null, null);
+        //}
+
+        protected override void OnClosing(CancelEventArgs e)
 		{
 			base.OnClosing(e);
 			IProjectService projectService = (IProjectService)ICSharpCode.Core.Services.ServiceManager.Services.GetService(typeof(IProjectService));

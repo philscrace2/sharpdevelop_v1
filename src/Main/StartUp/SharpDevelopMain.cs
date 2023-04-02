@@ -62,21 +62,24 @@ namespace ICSharpCode.SharpDevelop
 		{
 			commandLineArgs = args;
 			bool noLogo = false;
-			
-			//SplashScreenForm.SetCommandLineArgs(args);
-			
-			//foreach (string parameter in SplashScreenForm.GetParameterList()) {
-			//	switch (parameter.ToUpper()) {
-			//		case "NOLOGO":
-			//			noLogo = true;
-			//			break;
-			//	}
-			//}
-			
-			//if (!noLogo) {
-			//	SplashScreenForm.SplashScreen.Show();
-			//}
-			Application.ThreadException += new ThreadExceptionEventHandler(ShowErrorBox);
+
+            //SplashScreenForm.SetCommandLineArgs(args);
+
+            //foreach (string parameter in SplashScreenForm.GetParameterList())
+            //{
+            //    switch (parameter.ToUpper())
+            //    {
+            //        case "NOLOGO":
+            //            noLogo = true;
+            //            break;
+            //    }
+            //}
+
+            //if (!noLogo)
+            //{
+            //    SplashScreenForm.SplashScreen.Show();
+            //}
+            Application.ThreadException += new ThreadExceptionEventHandler(ShowErrorBox);
 			
 			bool ignoreDefaultPath = false;
 			string [] addInDirs = ICSharpCode.SharpDevelop.AddInSettingsHandler.GetAddInDirectories(out ignoreDefaultPath);
@@ -100,10 +103,11 @@ namespace ICSharpCode.SharpDevelop
 				MessageBox.Show("Loading error, please reinstall :"  + Environment.NewLine + e.ToString());
 				return;
 			} finally {
-				//if (SplashScreenForm.SplashScreen != null) {
-				//	SplashScreenForm.SplashScreen.Close();
-				//}
-			}
+                //if (SplashScreenForm.SplashScreen != null)
+                //{
+                //    SplashScreenForm.SplashScreen.Close();
+                //}
+            }
 			
 			try {
 				// run the last autostart command, this must be the workbench starting command

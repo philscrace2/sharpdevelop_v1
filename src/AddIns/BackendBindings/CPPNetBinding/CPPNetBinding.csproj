@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPPNetBinding</RootNamespace>
+    <AssemblyName>CPPNetBinding</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CPPNetBindingCompilerManager.cs" />
+    <Compile Include="CPPNetBindingExecutionManager.cs" />
+    <Compile Include="CPPNetLanguageBinding.cs" />
+    <Compile Include="Dependences.cs" />
+    <Compile Include="FormattingStrategy\CPPNetFormattingStrategy.cs" />
+    <Compile Include="Gui\CPPCodeGenerationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IncludeParser.cs" />
+    <Compile Include="Project\CPPNetCompilerParameters.cs" />
+    <Compile Include="Project\CPPNetProject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{9b70b99b-6db2-41e3-af5a-fc5329b60979}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\ICSharpCode.XmlForms\ICSharpCode.XmlForms.csproj">
+      <Project>{1e45a3a7-e223-4f7b-aa6f-efd82326cc1f}</Project>
+      <Name>ICSharpCode.XmlForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Main\Core\Core.csproj">
+      <Project>{e31de660-6261-4d37-88f2-0b281f3cb33f}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Main\Main\Main.csproj">
+      <Project>{99820dd2-6dd7-4fe1-9a78-2d4f032cdb52}</Project>
+      <Name>Main</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

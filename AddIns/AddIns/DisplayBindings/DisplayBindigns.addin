@@ -1,0 +1,118 @@
+<AddIn name        = "SharpDevelop Bindings"
+       author      = "Mike Krueger"
+       copyright   = "GPL"
+       url         = "http://www.icsharpcode.net"
+       description = "NCvs core module"
+       version     = "1.0.0">
+
+	<Runtime>
+		<Import assembly="AssemblyScout.dll"/>
+		<Import assembly="ResourceEditor.dll"/>
+<!--		<Import assembly="SharpHtmlEditor.dll"/> -->
+	</Runtime>
+
+	<Extension path = "/SharpDevelop/Workbench/DisplayBindings">
+		<DisplayBinding id           = "AssemblyScout"
+		                insertbefore = "Text"
+		                class        = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.AssemblyScoutBinding" />
+				
+		<DisplayBinding id           = "ResourceEditor"
+		                insertbefore = "Text"
+		                class        = "ResourceEditor.ResourceEditorDisplayBinding" />
+<!--
+		<DisplayBinding id           = "HtmlEditor"
+		                insertbefore = "Text"
+		                class        = "HtmlBackendBinding.HtmlDisplayBinding" /> -->
+	</Extension>
+		
+	<Extension path = "/SharpDevelop/Workbench/MainMenu/View">
+		<MenuItem id = "ShowAssemblyScout"
+		          insertafter  = "ViewItemsSeparator"
+		          insertbefore = "FullScreen"
+		          label = "Assembly Scout"
+		          class = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.AssemblyScoutCommand"/>
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Dialogs/OptionsDialog/ToolsOptions">
+		<DialogPanel id    = "AssemblyScoutOptions"
+		             label = "${res:Dialog.Options.IDEOptions.AssemblyScout.PanelName}"
+		             class = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.AssemblyScoutOptionPanel"/>
+
+	</Extension>
+	
+	<Extension path="/SharpDevelop/ResourceEdtior/ResourceList/ContextMenu">
+			<MenuItem id="AddStringEntry"
+				      label="${res:ResourceEditor.ResourceEdit.ContextMenu.AddStringEntry}"
+				      class="ResourceEditor.AddStringCommand"
+				      shortcut = "Ins" />
+			
+			<MenuItem id="AddFile"
+			          label="${res:ResourceEditor.ResourceEdit.ContextMenu.AddFiles}"
+			          class="ResourceEditor.AddNewFileCommand" />
+			
+			<MenuItem id="Separator1"
+			          label="-" />
+			<Conditional ownerstate="ItemsSelected" action="Disable">
+				<MenuItem id="SaveAs"
+				          label="${res:XML.MainMenu.FileMenu.SaveAs}"
+				          class="ResourceEditor.SaveEntryAsCommand" />
+				<MenuItem id="Rename"
+				          label="${res:ResourceEditor.ResourceEdit.ContextMenu.Rename}"
+				          class="ResourceEditor.RenameEntryCommand"
+				          shortcut="F2" />
+				<MenuItem id="CopyResourceName"
+				          label="${res:ResourceEditor.ResourceEdit.ContextMenu.CopyResourceName}"
+				          class="ResourceEditor.CopyResourceNameCommand" />
+				<MenuItem id="Delete"
+				          label="${res:ResourceEditor.ResourceEdit.ContextMenu.Delete}"
+				          class="ResourceEditor.DeleteEntryCommand"
+				          shortcut="Del" />
+				
+				<MenuItem id="Separator2"
+				          label="-" />
+			
+				<MenuItem id="Cut"
+				          label="${res:XML.MainMenu.EditMenu.Cut}"
+				          class="ICSharpCode.SharpDevelop.Commands.Cut" />
+				
+				<MenuItem id="Copy"
+				          label="${res:XML.MainMenu.EditMenu.Copy}"
+				          class="ICSharpCode.SharpDevelop.Commands.Copy" />
+			</Conditional>
+			
+			<MenuItem id="Paste"
+			          label="${res:XML.MainMenu.EditMenu.Paste}"
+			          class="ICSharpCode.SharpDevelop.Commands.Paste" />
+			
+			<MenuItem id="Separator3"
+			          label="-" />
+			
+			<MenuItem id="SelectAll"
+			          label="${res:XML.MainMenu.EditMenu.SelectAll}"
+			          class="ICSharpCode.SharpDevelop.Commands.SelectAll"
+			          shortcut="Ctrl|A" />
+	</Extension>
+	
+	<Extension path = "/SharpDevelop/Workbench/MainMenu">
+		<Conditional openwindow="ICSharpCode.SharpDevelop.AddIns.AssemblyScout.AssemblyScoutViewContent">
+	        <MenuItem id = "AssemblyScout" insertafter="View" insertbefore="Tools" label="${res:Dialog.Options.IDEOptions.AssemblyScout.PanelName}">
+                <MenuItem id = "LoadAssembly"
+                          label = "${res:ObjectBrowser.Menu.LoadAssembly}" 
+                          icon = "Icons.16x16.OpenAssembly" 
+                          class = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.Commands.LoadAssemblyCommand"/>
+                <MenuItem id = "LoadStdAssemblies"
+                          label = "${res:ObjectBrowser.Menu.LoadStd}" 
+                          class = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.Commands.LoadStdAssembliesCommand"/>
+                <MenuItem id = "LoadRefAssemblies"
+                          label = "${res:ObjectBrowser.Menu.LoadRef}" 
+                          class = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.Commands.LoadRefAssembliesCommand"/>
+                <MenuItem id = "AssemblySeparator"
+                		  label = "-"/>
+                <MenuItem id = "AssemblyScoutGoBack"
+                		  label = "${res:ObjectBrowser.Menu.GoBack}" 
+                		  icon = "Icons.16x16.BrowserBefore"
+                          class = "ICSharpCode.SharpDevelop.AddIns.AssemblyScout.Commands.BackCommand"/>                		  
+			</MenuItem>
+		</Conditional>
+	</Extension>
+</AddIn>
