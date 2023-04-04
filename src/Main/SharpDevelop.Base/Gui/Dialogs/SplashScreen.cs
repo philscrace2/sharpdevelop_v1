@@ -27,7 +27,7 @@ namespace ICSharpCode.SharpDevelop.Gui.Dialogs {
 			FormBorderStyle = FormBorderStyle.None;
 			StartPosition   = FormStartPosition.CenterScreen;
 			ShowInTaskbar   = false;
-			Bitmap bitmap = new Bitmap(Assembly.GetEntryAssembly().GetManifestResourceStream("SplashScreen.png"));
+			Bitmap bitmap = new Bitmap(Assembly.GetEntryAssembly().GetManifestResourceStream("SharpDevelop.SplashScreen.png"));
 			Size = bitmap.Size;
 			BackgroundImage = bitmap;
 		}

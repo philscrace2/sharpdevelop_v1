@@ -138,9 +138,9 @@ namespace ICSharpCode.Core.Services
 		{
 			imagelist.ColorDepth = ColorDepth.Depth32Bit;
 			initalsize  = imagelist.Images.Count;
-			ResourceService resourceService = (ResourceService)ServiceManager.Services.GetService(typeof(IResourceService));
-			
-			lock (imagelist) {
+            ResourceService resourceService = (ResourceService)ServiceManager.Services.GetService(typeof(IResourceService));
+
+            lock (imagelist) {
 				imagelist.Images.Add(resourceService.GetBitmap("Icons.16x16.MiscFiles"));
 				
 				extensionHashtable[".PRJX"] = imagelist.Images.Count;

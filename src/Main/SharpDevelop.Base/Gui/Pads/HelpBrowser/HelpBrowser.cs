@@ -102,8 +102,8 @@ namespace ICSharpCode.SharpDevelop.Gui.Pads
 			treeView.AfterSelect    += new TreeViewEventHandler(SelectNode);
 			browserPanel.Controls.Add(treeView);
 			
-			LoadHelpfile();
-			ScanForLocalizedHelpPrefix();
+			//LoadHelpfile();
+			//ScanForLocalizedHelpPrefix();
 			
 		}
 		

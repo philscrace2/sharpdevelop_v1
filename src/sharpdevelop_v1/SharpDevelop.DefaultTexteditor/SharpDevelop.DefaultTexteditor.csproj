@@ -159,9 +159,9 @@
       <Project>{e31de660-6261-4d37-88f2-0b281f3cb33f}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Main\Main\Main.csproj">
-      <Project>{99820dd2-6dd7-4fe1-9a78-2d4f032cdb52}</Project>
-      <Name>Main</Name>
+    <ProjectReference Include="..\..\Main\SharpDevelop.Base\SharpDevelop.Base.csproj">
+      <Project>{db3912c5-e207-4e93-a80b-9db8f99ef707}</Project>
+      <Name>SharpDevelop.Base</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

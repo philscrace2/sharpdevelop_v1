@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "..\Main\Main\Main.csproj", "{99820DD2-6DD7-4FE1-9A78-2D4F032CDB52}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandBar", "..\Libraries\CommandBar\CommandBar\CommandBar.csproj", "{6109225B-B406-40EF-AB38-76286423D944}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TextEditor", "..\Libraries\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj", "{9B70B99B-6DB2-41E3-AF5A-FC5329B60979}"
@@ -39,16 +37,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CPPNetBinding", "CPPNetBind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPPNetBinding", "..\AddIns\BackendBindings\CPPNetBinding\CPPNetBinding.csproj", "{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AddinScout", "AddinScout", "{B01E19E4-F16C-4F0F-B5F2-2E71C8BA32A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddinScout", "..\AddIns\Misc\AddinScout\AddinScout.csproj", "{BF1BE722-D8FA-4E1B-A838-097E3CC86AA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssemblyScout", "AssemblyScout", "{8B03BEA6-0CAB-4425-8695-ACE26F490C35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyScout", "..\AddIns\DisplayBindings\AssemblyScout\AssemblyScout.csproj", "{DE033DA9-E995-4755-AD0E-C820995A1D41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{99820DD2-6DD7-4FE1-9A78-2D4F032CDB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99820DD2-6DD7-4FE1-9A78-2D4F032CDB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99820DD2-6DD7-4FE1-9A78-2D4F032CDB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99820DD2-6DD7-4FE1-9A78-2D4F032CDB52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6109225B-B406-40EF-AB38-76286423D944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6109225B-B406-40EF-AB38-76286423D944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6109225B-B406-40EF-AB38-76286423D944}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -109,6 +111,14 @@ Global
 		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1BE722-D8FA-4E1B-A838-097E3CC86AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1BE722-D8FA-4E1B-A838-097E3CC86AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1BE722-D8FA-4E1B-A838-097E3CC86AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1BE722-D8FA-4E1B-A838-097E3CC86AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE033DA9-E995-4755-AD0E-C820995A1D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE033DA9-E995-4755-AD0E-C820995A1D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE033DA9-E995-4755-AD0E-C820995A1D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE033DA9-E995-4755-AD0E-C820995A1D41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,5 +126,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{76820520-6F28-4180-B892-E310EDB56BBF} = {92661B95-B9DF-4133-8CDD-F3ABA4C0D3E1}
 		{53C0003E-2DCB-4AD8-80FE-DC7A6DB320D4} = {76820520-6F28-4180-B892-E310EDB56BBF}
+		{B01E19E4-F16C-4F0F-B5F2-2E71C8BA32A8} = {92661B95-B9DF-4133-8CDD-F3ABA4C0D3E1}
+		{BF1BE722-D8FA-4E1B-A838-097E3CC86AA1} = {B01E19E4-F16C-4F0F-B5F2-2E71C8BA32A8}
+		{8B03BEA6-0CAB-4425-8695-ACE26F490C35} = {92661B95-B9DF-4133-8CDD-F3ABA4C0D3E1}
+		{DE033DA9-E995-4755-AD0E-C820995A1D41} = {8B03BEA6-0CAB-4425-8695-ACE26F490C35}
 	EndGlobalSection
 EndGlobal

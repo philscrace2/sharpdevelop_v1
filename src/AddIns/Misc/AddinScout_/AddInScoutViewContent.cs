@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Drawing;
 
 using ICSharpCode.Core.Services;
-using ICSharpCode.Core.CoreProperties;
+using ICSharpCode.Core.Properties;
 using ICSharpCode.Core.AddIns.Codons;
 using ICSharpCode.Core.AddIns.Conditions;
 using ICSharpCode.Core.AddIns;

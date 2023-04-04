@@ -7,11 +7,6 @@
 	
 	<Runtime>
 		<Import assembly = "CPPNetBinding.dll"/>
-		<Import assembly = "CSharpBinding.dll"/>
-		<Import assembly = "JavaBinding.dll"/>
-		<Import assembly = "VBNetBinding.dll"/>
-		<Import assembly = "WixBinding.dll"/>
-		<Import assembly = "ILAsmBinding.dll"/>
 	</Runtime>
 
 	<Extension path = "/SharpDevelop/Workbench/Ambiences">
@@ -91,18 +86,12 @@
 	</Extension>
 
 	<Extension path = "/Workspace/Parser">
-		<Class id    = "CSharpParser" 
-		       class = "CSharpBinding.Parser.TParser"/>
-		<Class id    = "VBNetParser" 
-		       class = "VBBinding.Parser.TParser"/>
+		
 	</Extension>
 	
 	<Extension path = "/SharpDevelop/Workbench/MainMenu/Project">
 		<Conditional activeproject="VBNET">
-			<MenuItem id = "VB.DOC" 
-					  label = "${res:XML.MainMenu.ProjectMenu.RunVBDOC}" 
-					  description = "${res:XML.MainMenu.ProjectMenu.RunVBDOC.Description}" 
-					  class = "VBBinding.VBDOCCommand"/>
+			
 		</Conditional>
 	</Extension>
 	
@@ -289,31 +278,7 @@
 		      resource   = "Icons.16x16.TextFileIcon"/>
 	</Extension>
 	
-	<Extension path = "/SharpDevelop/Workbench/LanguageBindings">
-		<LanguageBinding id    = "CSharp"
-		                 supportedextensions = ".cs"
-		                 class = "CSharpBinding.CSharpLanguageBinding" />
-		<LanguageBinding id    = "C++.NET"
-		                 supportedextensions = ".cpp"
-		                 class = "CPPBinding.CPPLanguageBinding" />
-		<LanguageBinding id    = "C++"
-		                 supportedextensions = ".cpp"
-		                 class = "CPPBinding.CPPLanguageBinding" />
-		<LanguageBinding id    = "VBNET"
-		                 supportedextensions = ".vb"
-		                 class = "VBBinding.VBLanguageBinding" />
-		<LanguageBinding id    = "Java"
-		                 supportedextensions = ".java"
-		                 class = "JavaBinding.JavaLanguageBinding" />
-<!--		<LanguageBinding id    = "JScript"
-		                 supportedextensions = ".js"
-		                 class = "JScriptBinding.JScriptLanguageBinding" /> -->
-		<LanguageBinding id    = "Wix"
-		                 supportedextensions = ".wxs"
-		                 class = "ICSharpCode.WixBinding.WixLanguageBinding" />
-		<LanguageBinding id    = "ILAsm"
-		                 supportedextensions = ".il"
-		                 class = "ICSharpCode.ILAsmBinding.ILAsmLanguageBinding" />
+	<Extension path = "/SharpDevelop/Workbench/LanguageBindings">		
 	</Extension>
 	
 	<Extension path = "/SharpDevelop/Views/ProjectBrowser/NodeBuilders">

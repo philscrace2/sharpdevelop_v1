@@ -26,7 +26,7 @@ namespace ICSharpCode.TextEditor.Document
 		public ResourceSyntaxModeProvider()
 		{
 			Assembly assembly = typeof(SyntaxMode).Assembly;
-			Stream syntaxModeStream = assembly.GetManifestResourceStream("SyntaxModes.xml");
+			Stream syntaxModeStream = assembly.GetManifestResourceStream("ICSharpCode.TextEditor.data.syntaxmodes.SyntaxModes.xml");
 			if (syntaxModeStream == null) throw new ApplicationException();
 			syntaxModes = SyntaxMode.GetSyntaxModes(syntaxModeStream);
 		}

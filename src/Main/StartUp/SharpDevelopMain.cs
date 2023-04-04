@@ -63,22 +63,22 @@ namespace ICSharpCode.SharpDevelop
 			commandLineArgs = args;
 			bool noLogo = false;
 
-            //SplashScreenForm.SetCommandLineArgs(args);
+            SplashScreenForm.SetCommandLineArgs(args);
 
-            //foreach (string parameter in SplashScreenForm.GetParameterList())
-            //{
-            //    switch (parameter.ToUpper())
-            //    {
-            //        case "NOLOGO":
-            //            noLogo = true;
-            //            break;
-            //    }
-            //}
+            foreach (string parameter in SplashScreenForm.GetParameterList())
+            {
+                switch (parameter.ToUpper())
+                {
+                    case "NOLOGO":
+                        noLogo = true;
+                        break;
+                }
+            }
 
-            //if (!noLogo)
-            //{
-            //    SplashScreenForm.SplashScreen.Show();
-            //}
+            if (!noLogo)
+            {
+                SplashScreenForm.SplashScreen.Show();
+            }
             Application.ThreadException += new ThreadExceptionEventHandler(ShowErrorBox);
 			
 			bool ignoreDefaultPath = false;
@@ -103,10 +103,10 @@ namespace ICSharpCode.SharpDevelop
 				MessageBox.Show("Loading error, please reinstall :"  + Environment.NewLine + e.ToString());
 				return;
 			} finally {
-                //if (SplashScreenForm.SplashScreen != null)
-                //{
-                //    SplashScreenForm.SplashScreen.Close();
-                //}
+                if (SplashScreenForm.SplashScreen != null)
+                {
+                    SplashScreenForm.SplashScreen.Close();
+                }
             }
 			
 			try {

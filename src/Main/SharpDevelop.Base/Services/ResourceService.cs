@@ -28,8 +28,8 @@ namespace ICSharpCode.Core.Services
 	{
 		readonly static string uiLanguageProperty = "CoreProperties.UILanguage";
 		
-		readonly static string stringResources  = "StringResources";
-		readonly static string imageResources   = "BitmapResources";
+		readonly static string stringResources  = "SharpDevelop.StringResources";
+		readonly static string imageResources   = "SharpDevelop.BitmapResources";
 		
 		static string resourceDirctory;
 		

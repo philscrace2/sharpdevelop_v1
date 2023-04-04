@@ -37,7 +37,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="src\Actions\BookmarkActions.cs" />
     <Compile Include="src\Actions\CaretActions.cs" />
     <Compile Include="src\Actions\ClipBoardActions.cs" />
@@ -167,25 +166,25 @@
     <None Include="data\Mode.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="data\syntaxmodes\ASPX.xshd" />
-    <None Include="data\syntaxmodes\BAT-Mode.xshd" />
-    <None Include="data\syntaxmodes\Coco-Mode.xshd" />
-    <None Include="data\syntaxmodes\CPP-Mode.xshd" />
-    <None Include="data\syntaxmodes\CSharp-Mode.xshd" />
-    <None Include="data\syntaxmodes\HTML-Mode.xshd" />
-    <None Include="data\syntaxmodes\ILAsm-Mode.xshd" />
-    <None Include="data\syntaxmodes\Java-Mode.xshd" />
-    <None Include="data\syntaxmodes\JavaScript-Mode.xshd" />
-    <None Include="data\syntaxmodes\PHP-Mode.xshd" />
-    <None Include="data\syntaxmodes\Tex-Mode.xshd" />
-    <None Include="data\syntaxmodes\VBNET-Mode.xshd" />
-    <None Include="data\syntaxmodes\XML-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\ASPX.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\BAT-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\Coco-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\CPP-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\CSharp-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\HTML-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\ILAsm-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\Java-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\JavaScript-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\PHP-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\Tex-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\VBNET-Mode.xshd" />
+    <EmbeddedResource Include="data\syntaxmodes\XML-Mode.xshd" />
     <None Include="src\ICSharpCode.TextEditor.prjx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\ICSharpCode.TextEditor.TextEditorControl.bmp" />
     <Content Include="data\RightArrow.cur" />
-    <Content Include="data\syntaxmodes\SyntaxModes.xml" />
+    <EmbeddedResource Include="data\syntaxmodes\SyntaxModes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
